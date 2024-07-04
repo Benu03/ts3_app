@@ -1,0 +1,23 @@
+<?php
+use Illuminate\Support\Facades\DB;
+
+function website($perintah='')
+{
+	// Load model
+	$site = DB::connection('ts3')->table('cp.konfigurasi')->first();
+	// User
+	if($perintah=='lengkap') {
+		$hasil = $site->namaweb.' | '.$site->tagline;
+	}elseif($perintah=="tagline") {
+		$hasil = $site->tagline;
+	}elseif($perintah=="logo") {
+		$hasil = $site->logo;
+	}elseif($perintah=="icon") {
+		$hasil = $site->icon;
+	}else{
+		$hasil = $site->namaweb;
+	}
+	// Output
+	return $hasil;
+}
+

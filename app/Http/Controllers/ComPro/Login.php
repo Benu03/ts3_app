@@ -9,6 +9,9 @@ use App\Helpers\Website;
 use App\Http\Controllers\Feature\EmailContoller;
 use App\Jobs\SendEmailAutomatic;
 use Log;
+use App\Http\Helpers\Validator;
+use App\Http\Helpers\Bridge;
+use Illuminate\Support\Facades\Session;
 
 class Login extends Controller
 {
@@ -25,94 +28,61 @@ class Login extends Controller
     // Cek
     public function check(Request $request)
     {
-        $username   = $request->username;
-        $password   = $request->password;
-        $model      = new User_model();
-        $user       = $model->login($username,$password);
+  
+        $validated = Validator::access_login($request);
+        if($validated->fails()){
+            return redirect('login')->withErrors($validated)->withInput();
+        }
+        else {
+            $params = [
+                'url' => config('static.app_access').'/auth/login',
+                'body' => [
+                    'username'  => $request->username,
+                    'password'  => $request->password,
+                ]
+            ];
 
+            $response = Bridge::BuildCurlApiPA($params);
         
-            if(isset($user) == true){
+            if($response['status'] == 200){
+                $params = [
+                    'session_token' => $response['data']['session']['session_token'],
+                    'username'      => $response['data']['user_data']['username'],
+                    'full_name'     => $response['data']['user_data']['full_name'],
+                    'email'         => $response['data']['user_data']['email'],
+                    'nik'           => $response['data']['user_data']['nik'],
+                    'phone'     => $response['data']['user_data']['phone'],
+                    'wa_number'     => $response['data']['user_data']['wa_number'],
+                    'type'     => $response['data']['user_data']['type'],
+                    'entity'     => $response['data']['user_data']['entity'],
+                    'division'     => $response['data']['user_data']['division'],
+                    'department'     => $response['data']['user_data']['department'],
+                    'position'     => $response['data']['user_data']['position'],
+                    'address'     => $response['data']['user_data']['address'],
+                    'image_url'     => $response['data']['user_data']['image_url']
+                ];
 
-                DB::connection('ts3')->table('auth.users')->where('username',$user->username)->update([
-                'is_login'     => true
-                ]);  
+                Session::put('user', $params);
+                Session::put('module', $response['data']['module']);
 
-                if($user->is_confirm != true){
-          
-                    return redirect('login/login-konfirmasi/'.$user->username)->with(['sukses' => 'Mohon Untuk Melengkapi Data Akun Anda']);
-                }
+                Log::info($params);
+                                
+                return redirect()->route('lobby');
 
-                else{
-
-                        if($user->id_role == 1) 
-                        {
-                            $request->session()->put('id_user', $user->id_user);
-                            $request->session()->put('nama', $user->nama);
-                            $request->session()->put('username', $user->username);
-                            $request->session()->put('id_role', $user->id_role);
-                        
-                        
-                            return redirect('admin-cms/dasbor')->with(['sukses' => 'Anda berhasil login']);
-                        }
-                        elseif($user->id_role == 2) 
-                        {
-                            $request->session()->put('id_user', $user->id_user);
-                            $request->session()->put('nama', $user->nama);
-                            $request->session()->put('username', $user->username);
-                            $request->session()->put('id_role', $user->id_role);
-                            return redirect('admin-ts3/dasbor')->with(['sukses' => 'Anda berhasil login']);
-
-                        }
-                        elseif($user->id_role == 3) 
-                        {
-                            $request->session()->put('id_user', $user->id_user);
-                            $request->session()->put('nama', $user->nama);
-                            $request->session()->put('username', $user->username);
-                            $request->session()->put('id_role', $user->id_role);
-                            return redirect('admin-client/dasbor')->with(['sukses' => 'Anda berhasil login']);
-
-                        }
-                        elseif($user->id_role == 4) 
-                        {
-                            $request->session()->put('id_user', $user->id_user);
-                            $request->session()->put('nama', $user->nama);
-                            $request->session()->put('username', $user->username);
-                            $request->session()->put('id_role', $user->id_role);
-                            return redirect('bengkel/dasbor')->with(['sukses' => 'Anda berhasil login']);
-
-                        }
-                        elseif($user->id_role == 5) 
-                        {
-                            $request->session()->put('id_user', $user->id_user);
-                            $request->session()->put('nama', $user->nama);
-                            $request->session()->put('username', $user->username);
-                            $request->session()->put('id_role', $user->id_role);
-                            return redirect('pic/dasbor')->with(['sukses' => 'Anda berhasil login']);
-
-                        }
-                        elseif($user->id_role == 6) 
-                        {
-                            $request->session()->put('id_user', $user->id_user);
-                            $request->session()->put('nama', $user->nama);
-                            $request->session()->put('username', $user->username);
-                            $request->session()->put('id_role', $user->id_role);
-                            return redirect('pic-regional/dasbor')->with(['sukses' => 'Anda berhasil login']);
-
-                        }
-                        else{
-
-                            return redirect('login')->with(['warning' => 'Mohon maaf,Role Akses Anda Belum Terdaftar']);
-                        }
-                    }
+            }else if($response['status'] == 401){
+                return redirect('login')->with(['password'=>$response['message']]);
+                // return redirect('login')->with(['warning' => 'Mohon maaf, Email Anda Tidak Terdaftar']);
+            }else{
+                return redirect('login')->with(['password'=>'login failed']);
+                // return redirect('login')->with(['warning' => 'Mohon maaf, Email Anda Tidak Terdaftar']);
             }
-            else
-            {
-                return redirect('login')->with(['warning' => 'Mohon maaf, Username atau password salah']);
-            }
+
+        }
+
         
     }
 
-    // Homepage
+
     public function logout()
     {
         DB::connection('ts3')->table('auth.users')->where('username',Session()->get('username'))->update([

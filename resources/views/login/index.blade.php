@@ -21,6 +21,9 @@
     <link rel="shortcut icon" href="{{ asset('assets/upload/image/'.website('icon')) }}">
     <script src="{{ asset('assets/sweetalert/js/sweetalert.min.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/sweetalert/css/sweetalert.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -51,15 +54,22 @@
                                 <div class="form-group last mb-4">
                                     <label for="password">Password</label>
                                     <input type="password" class="form-control" id="password" name="password" required />
+                                    <div class="input-group-append" style="position: absolute; right: 16px; top: 0; bottom: 0; display: flex; align-items: center;">
+                                        <span class="input-group-text toggle-password" style="cursor: pointer; background-color: transparent; border: none; padding: 0;" onclick="togglePassword()">
+                                            <i class="nav-icon material-symbols-rounded" style="font-size: 22px !important; color: #2E308A;">visibility_off</i>
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <div class="d-flex mb-2 align-items-center">
                                     <label class="control control--checkbox mb-0">
 
 
-                                        <span class="caption">Show Password</span>
-                                        <input type="checkbox" onclick="showpassword()" />
+                                        <span class="caption">Remember Password</span>
+                                        <input type="checkbox"   name="remember" id="remember"   />
                                         <div class="control__indicator"></div>
+
+                               
 
 
                                     </label>
@@ -114,6 +124,43 @@
     // Notifikasi
     swal ( "Berhasil" ,  "<?php echo $message ?>" ,  "success" )
     @endif
+
+
+    const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const rememberCheckbox = document.getElementById('remember');
+
+        window.addEventListener('load', () => {
+            const navbar = document.querySelector('.navbar');
+            setTimeout(() => {
+                navbar.classList.add('show');
+            }, 200);
+        });
+
+        function togglePassword() {
+            var passwordInput = document.getElementById('password');
+            var icon = document.querySelector('.toggle-password i');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.textContent = 'visibility';
+            } else {
+                passwordInput.type = 'password';
+                icon.textContent = 'visibility_off';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var navbar              = document.getElementById('navbar');
+            var rememberCheckbox    = document.getElementById('remember');
+            var usernameInput       = document.getElementById('username');
+            var passwordInput       = document.getElementById('password');
+
+            const loginBtn = document.getElementById('login-button');
+            $('#login-button').click(function() {
+                $('#login-text').hide();
+                $('#login-spinner').show();
+            });
+        });
     </script>
 </body>
 

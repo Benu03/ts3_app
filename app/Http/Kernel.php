@@ -71,5 +71,6 @@ class Kernel extends HttpKernel
         'pic' => \App\Http\Middleware\Pic::class,
         'pic_reg' => \App\Http\Middleware\PicReg::class,
         'feature' => \App\Http\Middleware\Feature::class,
+        'auth.custom' => \App\Http\Middleware\authCustom::class,
     ];
 }

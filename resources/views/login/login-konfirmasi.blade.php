@@ -133,7 +133,7 @@
     <script src="{{ asset('assets/auth/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('assets/auth/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/auth/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/auth/js/sweetalert2.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/auth/js/sweetalert2.min.js') }}"></script> --}}
     <script src="{{ asset('assets/auth/js/main.js') }}"></script>
     <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->

@@ -23,7 +23,7 @@
              
                 <div class="row">
                     <div class="col-lg-12 col-md-12 text-center pb-2">
-                        <img src="{{ asset('img/logo/puninarlogo.png') }}" alt="PUNINAR SYSTEM" style="width: 300px; height: auto;">
+                        <img src="{{ asset('assets/upload/image/2.png') }}" alt="TS3 SYSTEM" style="width: 130px; height: auto;">
                     </div>
                     
                     <div class="col-lg-12 col-md-12 text-center pb-2" style="margin-top: 24px;">
@@ -62,7 +62,7 @@
                                     <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 30px; background-color: rgba(255, 255, 255, 0.5);">
                                         <div class="row align-items-center">
                                             <div class="col-4 col-md-4 text-center text-md-left">
-                                                <img src="{{ $module['image_module'] }}" alt="PUNINAR SYSTEM" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px;">
+                                                <img src="{{ $module['image_module'] }}" alt="TS3 SYSTEM" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px;">
                                             </div>
                                             <div class="col-8 col-md-8">
                                                 <div class="d-flex flex-column justify-content-center h-100 text-center text-md-left">

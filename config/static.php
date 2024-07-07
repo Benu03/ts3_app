@@ -7,5 +7,5 @@ return [
   'key_hash' => env('KEY_HASH'),
   'url_portal_ts3_main' => env('URL_PORTAL_TS3_MAIN'),
   'app_env' => env('APP_ENV'),
-  'app_access' => env('URL_ACCESS'),
+  'url_access' => env('URL_ACCESS'),
 ];

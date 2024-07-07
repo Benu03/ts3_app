@@ -17,8 +17,6 @@ Route::get('kontak', [Home::class, 'kontak']);
 Route::post('kirim-kontak', [Home::class, 'kirim_kontak']);
 Route::get('pemesanan', [Home::class, 'pemesanan']);
 Route::get('konfirmasi', [Home::class, 'konfirmasi']);
-Route::get('pembayaran', [Home::class, 'pembayaran']);
-Route::post('proses_pemesanan', [Home::class, 'proses_pemesanan']);
 Route::get('berhasil/{par1}', [Home::class, 'berhasil']);
 Route::get('cetak/{par1}', [Home::class, 'cetak']);
 Route::get('ts3', [Home::class, 'ts3']);

@@ -154,7 +154,7 @@ class HomeController extends Controller
 
     public function logout(Request $request) {
         $params = [
-            'url' => config('_static.api_full_url').'auth/logout',
+            'url' => config('static.url_access').'/auth/logout',
             'body' => [
                 'username'      => session()->get('user')['username'],
                 'session_token' => session()->get('user')['session_token'],
@@ -164,10 +164,12 @@ class HomeController extends Controller
         $response = Bridge::BuildCurlApiPA($params);
         if($response['status'] == 200){
             session()->flush();
-            return redirect(config('static.url_puninar_app_main').'login');
+            return redirect(config('static.url_portal_ts3_main').'login');
         }
 
     }
+
+    
     
 }
 

@@ -74,6 +74,7 @@ class authCustom
                 'message' => 'The client\'s session has expired and must log in again.'
             ], 401);
         } else {
+            Log::info('disnin');
             return redirect()->route('login')->withErrors(['msg' => 'Please login first']);
         }
     }

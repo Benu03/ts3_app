@@ -35,7 +35,7 @@ class Login extends Controller
         }
         else {
             $params = [
-                'url' => config('static.app_access').'/auth/login',
+                'url' => config('static.url_access').'/auth/login',
                 'body' => [
                     'username'  => $request->username,
                     'password'  => $request->password,
@@ -43,7 +43,7 @@ class Login extends Controller
             ];
 
             $response = Bridge::BuildCurlApiPA($params);
-        
+
             if($response['status'] == 200){
                 $params = [
                     'session_token' => $response['data']['session']['session_token'],
@@ -70,10 +70,13 @@ class Login extends Controller
                 return redirect()->route('lobby');
 
             }else if($response['status'] == 401){
-                return redirect('login')->with(['password'=>$response['message']]);
+                return redirect()->route('login')->with(['password'=>$response['message']]);
+                // return redirect('login')->with(['password'=>$response['message']]);
                 // return redirect('login')->with(['warning' => 'Mohon maaf, Email Anda Tidak Terdaftar']);
             }else{
-                return redirect('login')->with(['password'=>'login failed']);
+                Log::info('disini');
+                return redirect()->route('login')->with(['warning' => 'Mohon maaf, User Anda Tidak Terdaftar']);
+                // return redirect('login')->with(['password'=>'login failed']);
                 // return redirect('login')->with(['warning' => 'Mohon maaf, Email Anda Tidak Terdaftar']);
             }
 

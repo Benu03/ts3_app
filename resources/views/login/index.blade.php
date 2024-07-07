@@ -97,7 +97,7 @@
     <script src="{{ asset('assets/auth/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('assets/auth/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/auth/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/auth/js/sweetalert2.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/auth/js/sweetalert2.min.js') }}"></script> --}}
     <script src="{{ asset('assets/auth/js/main.js') }}"></script>
     <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
@@ -130,12 +130,12 @@
         const passwordInput = document.getElementById('password');
         const rememberCheckbox = document.getElementById('remember');
 
-        window.addEventListener('load', () => {
-            const navbar = document.querySelector('.navbar');
-            setTimeout(() => {
-                navbar.classList.add('show');
-            }, 200);
-        });
+        // window.addEventListener('load', () => {
+        //     const navbar = document.querySelector('.navbar');
+        //     setTimeout(() => {
+        //         navbar.classList.add('show');
+        //     }, 200);
+        // });
 
         function togglePassword() {
             var passwordInput = document.getElementById('password');

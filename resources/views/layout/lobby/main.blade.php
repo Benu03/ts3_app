@@ -260,7 +260,7 @@
     
     <!-- /.content-wrapper -->
     @include('global.modal.wrapper',['id_modal'=>'modal-notif','modal_content'=>'modal-notif-content'])
-    @include('layouts.lobby.footer')
+    @include('layout.lobby.footer')
     @stack('js')
     <script>
         function logout(){

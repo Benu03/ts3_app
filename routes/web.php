@@ -15,7 +15,6 @@ Route::get('/', [Home::class, 'index'])->name('home');
 Route::get('home', [Home::class, 'index']);
 Route::get('kontak', [Home::class, 'kontak']);
 Route::post('kirim-kontak', [Home::class, 'kirim_kontak']);
-Route::get('pemesanan', [Home::class, 'pemesanan']);
 Route::get('konfirmasi', [Home::class, 'konfirmasi']);
 Route::get('berhasil/{par1}', [Home::class, 'berhasil']);
 Route::get('cetak/{par1}', [Home::class, 'cetak']);
@@ -27,7 +26,6 @@ Route::post('login/check', [Login::class, 'check']);
 Route::post('login/login-konfirmasi-process', [Login::class, 'konfimasi_proses']);
 Route::get('login/login-konfirmasi/{par1}', [Login::class, 'konfimasi']);
 Route::get('login/lupa', [Login::class, 'fogot']);
-Route::get('login/logout', [Login::class, 'logout']);
 Route::post('login/forgot-process', [Login::class, 'forgot_process']);
 Route::get('login/verify/{par1}', [Login::class, 'verify']);
 Route::post('login/verify-process', [Login::class, 'verify_process']);
@@ -47,6 +45,6 @@ Route::get('galeri/detail/{par1}', [Galeri::class, 'detail']);
 
 
 Route::group(['middleware' => ['auth.custom']], function() {
-    Route::get('/lobby', [HomeController::class, 'lobby'])->name('lobby');
+    Route::get('lobby', [HomeController::class, 'lobby'])->name('lobby');
     Route::post('logout', [HomeController::class, 'logout'])->name('logout');
 });

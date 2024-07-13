@@ -15,11 +15,11 @@
             height: 100%;
             width: 100%;
             background: #8b98bd;
-            background-image: url("{{url()->asset('img/logo/bg-lobby.png')}}");
+            background-image: url("{{url()->asset('img/logo/bg-lobby.jpg')}}");
             min-height: auto;
             font-family: 'Source Sans Pro', sans-serif;
-            background-size: 90%;
-            background-repeat: repeat;
+            background-size: 100%;
+     
         }
         .card-link {
             text-decoration: none;
@@ -49,165 +49,7 @@
           padding: 0;
         }
         
-        #langit {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;
-    z-index: -1;
-}
 
-.bulan {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    background: yellow;
-    left: 70px;
-    top: 95px;
-    opacity: 0.1;
-    border-radius: 50%;
-    animation: bercahaya 3s linear infinite;
-}
-
-.awan {
-    width: 200px;
-    height: 60px;
-    background: #9fd5e0;
-    border-radius: 200px;
-    position: relative;
-    z-index: 9999;
-}
-
-.awan:before,
-.awan:after {
-    content: " ";
-    position: absolute;
-    background: #9fd5e0;
-    width: 150px;
-    height: 80px;
-    top: -25px;
-    left: 10px;
-    border-radius: 100px;
-}
-
-.awan:after {
-    width: 120px;
-    height: 120px;
-    top: -55px;
-    right: 15px;
-}
-
-.no1 {
-    top: 230px;
-    animation: jalankanawan 15s linear infinite;
-}
-
-.no2 {
-    left: 200px;
-    transform: scale(0.6);
-    opacity: 0.6;
-    animation: jalankanawan 35s linear infinite;
-}
-
-.no3 {
-    left: -250px;
-    top: -250px;
-    transform: scale(0.8);
-    opacity: 0.8;
-    animation: jalankanawan 13s linear infinite;
-}
-
-.no4 {
-    left: 470px;
-    top: -320px;
-    transform: scale(0.75);
-    opacity: 0.75;
-    animation: jalankanawan 18s linear infinite;
-}
-
-.no5 {
-    left: -150px;
-    top: -150px;
-    transform: scale(0.8);
-    opacity: 0.8;
-    animation: jalankanawan 20s linear infinite;
-}
-
-.no6 {
-    top: 150px;
-    left: 350px;
-    transform: scale(0.7);
-    opacity: 0.7;
-    animation: jalankanawan 22s linear infinite;
-}
-
-.no7 {
-    top: 170px;
-    left: -50px;
-    transform: scale(0.65);
-    opacity: 0.65;
-    animation: jalankanawan 11s linear infinite;
-}
-
-    
-        @-webkit-keyframes jalankanawan {
-          0% {
-            margin-left: 1280px;
-          }
-          100% {
-            margin-left: -1280px;
-          }
-        }
-        @-moz-keyframes jalankanawan {
-          0% {
-            margin-left: 1280px;
-          }
-          100% {
-            margin-left: -1280px;
-          }
-        }
-        @-o-keyframes jalankanawan {
-          0% {
-            margin-left: 1280px;
-          }
-          100% {
-            margin-left: -1280px;
-          }
-        }
-  
-        @-webkit-keyframes bercahaya {
-          0% {
-            opacity: 0.6;
-            box-shadow: 3px 3px 35px 35px orange;
-          }
-          100% {
-            opacity: 0.7;
-            box-shadow: 3px 3px 40px 40px orange;
-          }
-        }
-  
-        @-moz-keyframes bercahaya {
-          0% {
-            opacity: 0.6;
-            box-shadow: 3px 3px 35px 35px orange;
-          }
-          100% {
-            opacity: 0.7;
-            box-shadow: 3px 3px 40px 40px orange;
-          }
-        }
-  
-        @-o-keyframes bercahaya {
-          0% {
-            opacity: 0.6;
-            box-shadow: 3px 3px 35px 35px orange;
-          }
-          100% {
-            opacity: 0.7;
-            box-shadow: 3px 3px 40px 40px orange;
-          }
-        }
-  
 
       </style>
 

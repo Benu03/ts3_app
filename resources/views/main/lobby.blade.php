@@ -8,16 +8,7 @@
    
     <section class="content">
         <div class="container-fluid ">
-            <div id="langit">
-                <div class="awan no1"></div>
-                <div class="awan no2"></div>
-                <div class="awan no3"></div>
-                <div class="awan no4"></div>
-                <div class="awan no5"></div>
-                <div class="awan no6"></div>
-                <div class="awan no7"></div>
-                <div class="bulan"></div>
-            </div>
+           
             <div class="content" style="padding:100px 150px 0 150px;">
                 
              

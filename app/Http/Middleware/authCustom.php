@@ -26,7 +26,7 @@ class authCustom
         if (!$usersession) {
             return $this->handleSessionExpired($request);
         }
-    
+        
         $body = [
             'session_token' => $usersession['session_token'],
             'username'      => $usersession['username']
@@ -35,7 +35,7 @@ class authCustom
         $timestamp = Carbon::now()->format('Y-m-d H:i:s');
         $encryptionKey = config('static.key_access') . $timestamp;
         $keyPun = hash(config('static.key_hash'), $encryptionKey);
-    
+        dd($timestamp);
         try {
             $responseSession = Http::withHeaders([
                 'Content-Type' => 'application/json',
@@ -46,7 +46,7 @@ class authCustom
 
             $responseSessionData = json_decode($responseSession->getBody()->getContents(), true);
 
-
+           
         } catch (\Exception $e) {
             Log::error("Error validating session: " . $e->getMessage());
             return redirect()->route('login')->withErrors(['msg' => 'Session validation failed. Please login again.']);
@@ -59,6 +59,7 @@ class authCustom
         } else {
             session()->flush();
             return redirect(config('static.url_portal_ts3_main') . 'login');
+            return redirect()->route('login')->with(['warning' => 'Please login first']);
         }
     
         return $next($request);
@@ -74,8 +75,8 @@ class authCustom
                 'message' => 'The client\'s session has expired and must log in again.'
             ], 401);
         } else {
-            Log::info('disnin');
-            return redirect()->route('login')->withErrors(['msg' => 'Please login first']);
+            return redirect()->route('login')->with(['warning' => 'Please login first']);
+
         }
     }
 }

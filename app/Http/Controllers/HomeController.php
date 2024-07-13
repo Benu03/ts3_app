@@ -35,14 +35,15 @@ class HomeController extends Controller
             'username'      => $usersession['username']
         ];
 
-        $encryptionKey = config('static.key_sso_puninar') . Carbon::now()->format('Y-m-d H:i:s');
+        $timestamp = arbon::now()->format('Y-m-d H:i:s');
+        $encryptionKey = config('static.key_access') . $timestamp;
         $keyPun = hash(config('static.key_hash'), $encryptionKey);
 
         $responseSession = Http::withHeaders([
             'Content-Type' => 'application/json',
-            'key-puninar' => $keyPun,
-            'timestamp' => Carbon::now()->format('Y-m-d H:i:s')
-        ])->post(config('static.url_sso_session'), $body);
+            'key-service' => $keyPun,
+            'timestamp' => $timestamp
+        ])->post(config('static.url_access_session'), $body);
 
 
         $responseSessionData = json_decode($responseSession ,true);
@@ -53,7 +54,7 @@ class HomeController extends Controller
 
         
         $data = [
-            'page_title'    => 'Puninar APP',
+            'page_title'    => 'TS3 APP',
             'page_url'      => 'null',
             'secretKey' =>  config('static.key_static'),
             'module'   => session()->get('module'),
@@ -126,7 +127,7 @@ class HomeController extends Controller
     public function view_main()
     {
         $data = [
-            'page_title' => 'Puninar App',
+            'page_title' => 'TS3 App',
             'page_url' => 'null'
         ];
 
@@ -144,9 +145,9 @@ class HomeController extends Controller
     public function profile()
     {
         $data = [
-            'page_title'    => 'Puninar APP',
+            'page_title'    => 'TS3 APP',
             'page_url'      => 'null',
-            'secretKey' =>  config('_static.key_static')
+            'secretKey' =>  config('static.key_static')
         ];
 
         return view('main.profile',compact('data'));
@@ -164,7 +165,7 @@ class HomeController extends Controller
         $response = Bridge::BuildCurlApiPA($params);
         if($response['status'] == 200){
             session()->flush();
-            return redirect(config('static.url_portal_ts3_main').'login');
+            return redirect()->route('login')->with(['warning' => 'Logout Berhasil']);
         }
 
     }

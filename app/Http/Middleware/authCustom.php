@@ -35,7 +35,7 @@ class authCustom
         $timestamp = Carbon::now()->format('Y-m-d H:i:s');
         $encryptionKey = config('static.key_access') . $timestamp;
         $keyPun = hash(config('static.key_hash'), $encryptionKey);
-        dd($timestamp);
+
         try {
             $responseSession = Http::withHeaders([
                 'Content-Type' => 'application/json',

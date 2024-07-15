@@ -262,6 +262,35 @@ class Login extends Controller
 
     }
 
+    public function reset_password(Request $request) {
+
+
+        $validated = ValidCheck::password_reset($request);
+        if(!isset($request->email)){
+            return redirect()->route('reset_page')->with(['warning' => 'Sesi Anda Berakhir silakan mencoba kembali']);
+        }
+
+        if($validated->fails()){
+            return redirect()->route('reset_page')->with(['warning' => $validated]);
+        }else {
+            $params = [
+                'url' => config('static.url_access').'/auth/reset-password',
+                'body' => [
+                    'username'      => $request->email,
+                    'new_password'  => $request->password,
+                ]
+            ];
+            $response = Bridge::BuildCurlApiPA($params);
+
+            if($response['status'] == 200){
+                return redirect()->route('success_reset')->with(['warning' => $response['message']]);
+            }else if($response['status'] == 401){
+                return redirect()->route('reset_page')->with(['warning'=>$response['message']]);
+            }
+        }
+    }
+
+
 
     
 

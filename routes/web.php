@@ -46,6 +46,8 @@ Route::get('galeri/detail/{par1}', [Galeri::class, 'detail']);
 Route::get('otp', [HomeController::class, 'otp'])->name('otp_page');
 Route::post('send-otp', [HomeController::class, 'sendOtp'])->name('send-otp');
 Route::get('reset-password', [HomeController::class, 'reset_password'])->name('reset_password_page');
+Route::post('reset-password', [Login::class, 'reset_password'])->name('reset_password');
+Route::get('success', [HomeController::class, 'success'])->name('success_reset');
 
 Route::group(['middleware' => ['auth.custom']], function() {
     Route::get('lobby', [HomeController::class, 'lobby'])->name('lobby');

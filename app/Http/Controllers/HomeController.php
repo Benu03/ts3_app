@@ -8,6 +8,7 @@ use App\Http\Helpers\Bridge;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
+use App\Http\Helpers\Validator as ValidCheck;
 
 class HomeController extends Controller
 {
@@ -111,10 +112,6 @@ class HomeController extends Controller
         ];
     }
 
-    public function success(){
-        return view('auth.success_reset');
-    }
-    
 
     public function profile()
     {
@@ -183,6 +180,10 @@ class HomeController extends Controller
         return view('login.reset_password', compact('data'));
     }
 
+   
+    public function success(){
+        return view('login.success_reset');
+    }
     
     
 }

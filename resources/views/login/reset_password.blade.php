@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'PEVO Fieldman') }}</title>
+    <title>{{ config('app.name', 'TS3 Indonesia') }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Tambahkan link ke Font Awesome CSS (ganti dengan versi terbaru) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -28,7 +28,7 @@
 
         body {
             box-sizing: border-box;
-            background: url("dist/img/BG.png");
+            background: url("dist/img/BG.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
@@ -78,7 +78,7 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card border-0 shadow rounded-5 my-5" style="border-radius: 20px;">
                     <div class="card-body p-4 p-sm-5">
-                        <a href="{{ route('login_page') }}" style="text-decoration: none; color: #2E308A;font-size:16px;">
+                        <a href="{{ route('login') }}" style="text-decoration: none; color: #2E308A;font-size:16px;">
                             <h6 class="card-title text-left mb-5" style="color: #2E308A;font-weight:600;">
                                 <i class="fa-solid fa-arrow-left"></i>
                                 Back to Login Page
@@ -124,7 +124,7 @@
                             </div>
                             <div class="d-grid mt-5" style="margin-bottom: 150px;">
                                 <button id="submitBtn" class="btn btn-login text-uppercase fw-bold text-white"
-                                    style="background-color: #2E308A; border-radius: 20px; font-size: 14px;"
+                                    style="background-color: #32AF81; border-radius: 20px; font-size: 14px;"
                                     type="submit">
                                     SUBMIT
                                     <span class="loading-icon d-none">

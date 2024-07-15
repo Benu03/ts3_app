@@ -75,46 +75,6 @@
 
 
 
-                            {{-- @if(config('app.env') == 'production')
-                            <a href="{{ $module['url'] }}" class="card-link" target="_blank" onclick="openWithSession(event, '{{ $module['url'] }}', '{{ $datapassingJson }}')">
-                            @endif
-
-                            <div class="card" style="border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; background-color: rgba(255, 255, 255, 0.5);">
-                            <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 30px; background-color: rgba(255, 255, 255, 0.5);">
-                                <div class="row align-items-center">
-                                    <div class="col-4 col-md-4 text-center text-md-left">
-                                        @if(config('app.env') == 'development')
-                                            <a href="{{ $module['url'] }}" class="card-link" target="_blank" onclick="openWithSession(event, '{{ $module['url'] }}', '{{ $datapassingJson }}')">
-                                        @endif
-                                        <img src="{{ $module['image_module'] }}" alt="PUNINAR SYSTEM" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px;">
-                                        @if(config('app.env') == 'development')
-                                            </a>
-                                        @endif
-                                    </div>
-                                    <div class="col-8 col-md-8">
-                                        @if(config('app.env') == 'development')
-                                            <a href="{{ $module['local_url'] }}" class="card-link" target="_blank" onclick="openWithSession(event, '{{ $module['local_url'] }}', '{{ $datapassingJson }}')">
-                                        @endif
-                                        <div class="d-flex flex-column justify-content-center h-100 text-center text-md-left">
-                                            <span style="color: #2E308A; font-weight: 700; font-size: 16px;">{{ $module['module'] }}</span>
-                                            <div style="margin-top: 10px; color: #898ac1; font-weight: 700; font-size: 12px;">
-                                                Role: {{ $module['role'] }}
-                                            </div>
-                                        </div>
-                                        @if(config('app.env') == 'development')
-                                            </a>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-
-                            @if(config('app.env') == 'production')
-                            </a>
-                            @endif --}}
-
-
-
 
                         </div>
                         

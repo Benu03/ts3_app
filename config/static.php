@@ -8,4 +8,5 @@ return [
   'url_portal_ts3_main' => env('URL_PORTAL_TS3_MAIN'),
   'app_env' => env('APP_ENV'),
   'url_access' => env('URL_ACCESS'),
+  'key_static' => env('KEY_STATIC','false'),
 ];

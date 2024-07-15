@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     HomeController,
+    OptionController,
 };
 use App\Http\Controllers\ComPro\{
     Home,
@@ -25,7 +26,7 @@ Route::get('login', [Login::class, 'index'])->name('login');
 Route::post('login/check', [Login::class, 'check']);
 Route::post('login/login-konfirmasi-process', [Login::class, 'konfimasi_proses']);
 Route::get('login/login-konfirmasi/{par1}', [Login::class, 'konfimasi']);
-Route::get('login/lupa', [Login::class, 'fogot']);
+Route::get('login/lupa', [Login::class, 'fogot'])->name('reset_page');
 Route::post('login/forgot-process', [Login::class, 'forgot_process']);
 Route::get('login/verify/{par1}', [Login::class, 'verify']);
 Route::post('login/verify-process', [Login::class, 'verify_process']);
@@ -42,9 +43,12 @@ Route::get('berita/sop-layanan/{par1}', [Berita::class, 'sop_layanan']);
 // galeri
 Route::get('galeri', [Galeri::class, 'index']);
 Route::get('galeri/detail/{par1}', [Galeri::class, 'detail']);
-
+Route::get('otp', [HomeController::class, 'otp'])->name('otp_page');
+Route::post('send-otp', [HomeController::class, 'sendOtp'])->name('send-otp');
+Route::get('reset-password', [HomeController::class, 'reset_password'])->name('reset_password_page');
 
 Route::group(['middleware' => ['auth.custom']], function() {
     Route::get('lobby', [HomeController::class, 'lobby'])->name('lobby');
     Route::post('logout', [HomeController::class, 'logout'])->name('logout');
+    Route::get('/option', [OptionController::class, 'index'])->name('option');
 });

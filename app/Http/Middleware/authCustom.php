@@ -61,7 +61,8 @@ class authCustom
             return redirect(config('static.url_portal_ts3_main') . 'login');
             return redirect()->route('login')->with(['warning' => 'Please login first']);
         }
-    
+        Session::forget('module');
+        Session::put('module', $responseSessionData['data']['module']);
         return $next($request);
     }
     

@@ -95,34 +95,8 @@ class HomeController extends Controller
         return view('auth.reset');
     }
 
-    public function otp()
-    {
-        if(session()->get('user')){
-            return redirect()->route('main');
-        }
+ 
 
-        $data = [
-            'message'   => session()->get('message'),
-            'username'  => session()->get('username'),
-            'otp'       => session()->get('otp'),
-            'via'       => session()->get('via')
-        ];
-
-        return view('auth.otp', compact('data'));
-    }
-
-    public function reset_password()
-    {
-        if(session()->get('user')){
-            return redirect()->route('main');
-        }
-
-        $data = [
-            'username'  => session()->get('username'),
-        ];
-
-        return view('auth.reset_password', compact('data'));
-    }
 
     public function view_main()
     {
@@ -168,6 +142,45 @@ class HomeController extends Controller
             return redirect()->route('login')->with(['warning' => 'Logout Berhasil']);
         }
 
+    }
+
+    public function otp()
+    {
+        // if(session()->get('user')){
+        //     return redirect()->route('main');
+        // }
+
+        $data = [
+            'message'   => session()->get('message'),
+            'username'  => session()->get('username'),
+            'otp'       => session()->get('otp'),
+            'via'       => session()->get('via')
+        ];
+
+        return view('login.otp', compact('data'));
+    }
+
+    public function sendOtp(Request $request) {
+        if($request->otp != $request->otp_old){
+            return redirect()->route('otp_page')->withErrors(['otp' => 'otp not match']);
+        }else{
+            return redirect()->route('reset_password_page')->with(
+                [
+                    'otp' => $request->otp,
+                    'username' => $request->username
+                ]);
+        }
+    }
+
+    public function reset_password()
+    {
+
+
+        $data = [
+            'username'  => session()->get('username'),
+        ];
+
+        return view('login.reset_password', compact('data'));
     }
 
     

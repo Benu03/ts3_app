@@ -9,7 +9,7 @@
     <section class="content">
         <div class="container-fluid ">
            
-            <div class="content" style="padding:100px 150px 0 150px;">
+            <div class="content" style="padding:100px 100px 0 100px;">
                 
              
                 <div class="row">
@@ -18,11 +18,11 @@
                     </div>
                     
                     <div class="col-lg-12 col-md-12 text-center pb-2" style="margin-top: 24px;">
-                        <strong style="font-size:20px;font-weight:700;">Your Module Apps</strong>
+                        <strong style="font-size:20px;font-weight:700;">Aplikasi Modul Anda</strong>
                     </div>
                     <div class="col-lg-12 col-md-12 text-center pb-5">
                         <span style="font-size:14px;font-weight:400;">
-                            Welcome! Here's a list of applications you have access to. Explore and manage your available applications below.
+                            Selamat datang! Berikut adalah daftar aplikasi yang dapat Anda akses. Jelajahi dan kelola aplikasi yang tersedia di bawah ini.
                         </span>
                     </div>
                     <div class="col-lg-12 col-md-12 row d-flex justify-content-center">

@@ -9,9 +9,10 @@ use App\Helpers\Website;
 use App\Http\Controllers\Feature\EmailContoller;
 use App\Jobs\SendEmailAutomatic;
 use Log;
-use App\Http\Helpers\Validator;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Helpers\Bridge;
 use Illuminate\Support\Facades\Session;
+use App\Http\Helpers\Validator as ValidCheck;
 
 class Login extends Controller
 {
@@ -29,7 +30,7 @@ class Login extends Controller
     public function check(Request $request)
     {
   
-        $validated = Validator::access_login($request);
+        $validated = ValidCheck::access_login($request);
         if($validated->fails()){
             return redirect('login')->withErrors($validated)->withInput();
         }
@@ -45,7 +46,7 @@ class Login extends Controller
             $response = Bridge::BuildCurlApiPA($params);
 
          
-         
+            
             if($response['status'] == 200){
                 $params = [
                     'session_token' => $response['data']['session']['session_token'],
@@ -89,10 +90,8 @@ class Login extends Controller
         DB::connection('ts3')->table('auth.users')->where('username',Session()->get('username'))->update([
             'is_login'     => false
             ]);  
-        Session()->forget('id_user');
-        Session()->forget('nama');
-        Session()->forget('username');
-        Session()->forget('akses_level');
+        Session()->forget('module');
+        Session()->forget('user');
         return redirect('login')->with(['sukses' => 'Anda berhasil logout']);
     }
 
@@ -108,51 +107,57 @@ class Login extends Controller
 
     public function forgot_process(Request $request)
     {
-        $email   = $request->email;
-        $model      = new User_model();
-        $user       = $model->check_user_email(trim($email));
-       
-        if(isset($user))
-        {
-            $site = DB::connection('ts3')->table('cp.konfigurasi')->first();
-      
-            $token = hash('sha256',random_bytes(64).$site->namaweb);
-      
-             DB::connection('ts3')->table('auth.user_token')->insert([
-                'email'	=> $email,
-                'token'   => $token,
-                'created_date'    => date("Y-m-d h:i:sa")
-            ]);
-            $url_img = 'https://ts3.co.id/assets/upload/image/2.png';
-            $url_verify = 'https://ts3.co.id/login/verify/'.$token;
+        // Validasi request
+        $validated = Validator::make($request->all(), [
+            'email' => 'required|email'
+        ], [
+            'email.required' => 'Please input email',
+            'email.email' => 'Please enter a valid email address'
+        ]);
+    
+        if ($validated->fails()) {
+            // Jika validasi gagal, kembali ke halaman reset dengan pesan peringatan
+            return redirect()->route('reset_page')->with('warning', $validated->errors()->first());
+        } else {
+             $via = 'EMAIL'; // Default reset method is email
+    
+            $params = [
+                'url' => config('static.url_access') . '/auth/forgot',
+                'body' => [
+                    'email' => $request->email,
+                    'reset_by' => $via,
+                ]
+            ];
 
-            $body = '<b>Dear Rekan TS3</b><br><br>Silakan Klik Link Untuk Mereset Password : <a class="btn btn-info" href="'.$url_verify.'"  >Reset Password</a><br><br>Best Regards<br>TS3 Indonesia<br><img src="'.$url_img.'"   width="70" height="70"  class="img-fluid" ><hr><b>TS3 Indonesia<br>Jl. Basudewa Raya 3A Ruko River View Kel Bulustalan <br>Kec Semarang Selatan 50245</b>';
-            
-             
+           
+    
+            $response = Bridge::BuildCurlApiPA($params);
+    
+            Log::info($response);
+            if ($response['status'] == 200) {
+ 
+                $data = [
+                    'username' => $request->email,
+                    'otp' => $response['data']['otp'], // Mengasumsikan API mengembalikan data OTP
+                    'message' => $response['message'], // Mengasumsikan API mengembalikan pesan
+                    'via' => $via, // Set metode reset (Email atau WhatsApp)
+                ];
+    
+  
+                Log::info($data);
+    
 
-            DB::connection('ts3')->table('auth.user_mail')->insert([
-                'type_request' => 'RESET PASSWORD',
-                'from' => $site->smtp_user,
-                'to' => $email,
-                'cc' => null,
-                'bcc' => null,
-                'subject' => 'Reset Password TS3',
-                'body' => $body,
-                'attachment' => null
-            ]);
+                return redirect()->route('otp_page')->with($data);
+            } else if ($response['status'] == 401) {
+                    return redirect()->route('reset_page')->with('warning', 'Tidak ditemukan akun dengan alamat email tersebut.');
+            } else {
 
-
-            // SendEmailAutomatic::dispatch();
-
-
+                return redirect()->route('reset_page')->with('warning', 'Terjadi kesalahan saat memproses permintaan reset.');
+            }
         }
-        else{
-           return redirect('login')->with(['warning' => 'Mohon maaf, Email Anda Tidak Terdaftar']);
-        }
-
-
-        return redirect('login')->with(['sukses' => 'Silakan Check email Anda Untuk Reset Password..!!']);
     }
+    
+    
 
     
 

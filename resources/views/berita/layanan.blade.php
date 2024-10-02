@@ -2,7 +2,7 @@
 $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Layanan')->orderBy('id_heading','DESC')->first();
  ?>
 <!--Inner Header Start-->
-<section class="wf100 p80 inner-header" style="background-image: url('{{ secure_asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
+<section class="wf100 p80 inner-header" style="background-image: url('{{ asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
    <div class="container">
       <h1>{{ $title }}</h1>
    </div>
@@ -20,7 +20,7 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Layanan')->
             </div>
          </div>
          <div class="col-lg-6">
-            <a href="#"><img src="{{ secure_asset('assets/upload/image/'.$berita->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
+            <a href="#"><img src="{{ asset('assets/upload/image/'.$berita->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
          </div>
          
       </div>
@@ -28,7 +28,7 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Layanan')->
       @if($berita->sop_layanan != null)
          <div class="row text center">
             <div class="embed-responsive embed-responsive-4by3"> 
-               <iframe src="{{ secure_asset('berita/sop-layanan/'.$berita->sop_layanan) }}#toolbar=0" type="application/pdf" width="80%"> </iframe>
+               <iframe src="{{ asset('berita/sop-layanan/'.$berita->sop_layanan) }}#toolbar=0" type="application/pdf" width="80%"> </iframe>
             </div>
          </div>
       @endif
@@ -45,12 +45,12 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Layanan')->
       <div class="row">
          <?php foreach($layanan as $layanan) { ?>
             <div class="col-md-4 col-sm-6">
-               <br><a href="{{ secure_asset('berita/layanan/'.$layanan->slug_berita) }}">
-               <img src="{{ secure_asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid"></a>
+               <br><a href="{{ asset('berita/layanan/'.$layanan->slug_berita) }}">
+               <img src="{{ asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid"></a>
                <div class="volbox">
                   <h6>{{ $layanan->judul_berita }}</h6>
                   <p>{{ $layanan->keywords }}</p>
-                  <a href="{{ secure_asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
+                  <a href="{{ asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
                </div>
             </div>
             <!--box  end--> 

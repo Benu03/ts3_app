@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="{{ secure_asset('assets/auth/fonts/icomoon/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/auth/fonts/icomoon/style.css') }}" />
 
-    <link rel="stylesheet" href="{{ secure_asset('assets/auth/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/auth/css/owl.carousel.min.css') }}" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ secure_asset('assets/auth/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ secure_asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/auth/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Style -->
-    <link rel="stylesheet" href="{{ secure_asset('assets/auth/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/auth/css/style.css') }}" />
 
     <title>{{ $title }}</title>
-    <link rel="shortcut icon" href="{{ secure_asset('assets/upload/image/'.website('icon')) }}">
-    <script src="{{ secure_asset('assets/sweetalert/js/sweetalert.min.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/sweetalert/css/sweetalert.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/upload/image/'.website('icon')) }}">
+    <script src="{{ asset('assets/sweetalert/js/sweetalert.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/sweetalert/css/sweetalert.css') }}">
 </head>
 
 <body>
@@ -33,12 +33,12 @@
                         <div class="col-md-8">
                             <div class="mb-4 text-center">
                                 <a href="{{ '/' }}">
-                                    <img src="{{ secure_asset('assets/upload/image/'.website('logo')) }}" alt="Image" class="img-fluid" width="200" height="200" />
+                                    <img src="{{ asset('assets/upload/image/'.website('logo')) }}" alt="Image" class="img-fluid" width="200" height="200" />
                                     <!-- <p class="mb-4">Belife Apps Change Your Life Become Better</p> -->
                                 </a>
                             </div>
                           
-                            <form action="{{ secure_asset('login/forgot-process') }}" method="post" accept-charset="utf-8">
+                            <form action="{{ asset('login/forgot-process') }}" method="post" accept-charset="utf-8">
                             {{ csrf_field() }}
                                 <div class="form-group first last mb-4">
                                     <label for="email">Masukan Email</label>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col-md-6">
                   <a href="{{ '/' }}">
-                    <img src="{{ secure_asset('assets/auth/images/2.svg')}}" alt="Image" class="img-fluid" />
+                    <img src="{{ asset('assets/auth/images/2.svg')}}" alt="Image" class="img-fluid" />
                   </a>
                   <span class="d-block text-left my-4 text-center text-white">Copyright &copy;<?= date('Y'); ?> {{ website('namaweb') }} Indonesia</span>
                 </div>
@@ -88,16 +88,16 @@
                 Copyright &copy;<?= date('Y'); ?> PT TS3 Indonesia
             </strong>
     </div> -->
-    <script src="{{ secure_asset('assets/auth/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ secure_asset('assets/auth/js/popper.min.js') }}"></script>
-    <script src="{{ secure_asset('assets/auth/js/bootstrap.min.js') }}"></script>
-    {{-- <script src="{{ secure_asset('assets/auth/js/sweetalert2.min.js') }}"></script> --}}
-    <script src="{{ secure_asset('assets/auth/js/main.js') }}"></script>
-    <script src="{{ secure_asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/auth/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('assets/auth/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/auth/js/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/auth/js/sweetalert2.min.js') }}"></script> --}}
+    <script src="{{ asset('assets/auth/js/main.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{ secure_asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="{{ secure_asset('assets/admin/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/dist/js/adminlte.min.js') }}"></script>
     <script>
         function showpassword() {
             var x = document.getElementById("password");

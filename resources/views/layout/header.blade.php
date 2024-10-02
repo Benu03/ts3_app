@@ -36,7 +36,7 @@ $site_config = DB::connection('ts3')->table('cp.konfigurasi')->first();
          <div class="container">
             <div class="row">
                <div class="col-md-6 col-sm-12">
-                  <div class="logo"><a href="{{ secure_asset('/') }}"><img src="{{ secure_asset('assets/upload/image/'.$site_config->logo) }}" alt="{{ $site_config->namaweb }}" style="max-height: 70px; width: auto;"></a></div>
+                  <div class="logo"><a href="{{ asset('/') }}"><img src="{{ asset('assets/upload/image/'.$site_config->logo) }}" alt="{{ $site_config->namaweb }}" style="max-height: 70px; width: auto;"></a></div>
                </div>
                
                <div class="col-md-6 col-sm-12">

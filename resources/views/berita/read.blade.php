@@ -2,7 +2,7 @@
 $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Berita')->orderBy('id_heading','DESC')->first();
  ?>
 <!--Inner Header Start-->
-<section class="wf100 p80 inner-header" style="background-image: url('{{ secure_asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
+<section class="wf100 p80 inner-header" style="background-image: url('{{ asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
    <div class="container">
       <h1>{{ $title }}</h1>
    </div>
@@ -27,7 +27,7 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Berita')->o
             </div>
          </div>
          <div class="col-lg-6">
-            <a href="#"><img src="{{ secure_asset('assets/upload/image/'.$read->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
+            <a href="#"><img src="{{ asset('assets/upload/image/'.$read->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
          </div>
          
          
@@ -36,7 +36,7 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Berita')->o
       @if($read->sop_layanan != null)
       <div class="row text center">
          <div class="embed-responsive embed-responsive-4by3"> 
-            <iframe src="{{ secure_asset('berita/sop-layanan/'.$read->sop_layanan) }}#toolbar=0" type="application/pdf" width="80%"> </iframe>
+            <iframe src="{{ asset('berita/sop-layanan/'.$read->sop_layanan) }}#toolbar=0" type="application/pdf" width="80%"> </iframe>
          </div>
       </div>
       @endif

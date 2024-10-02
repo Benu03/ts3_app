@@ -7,7 +7,7 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ $data['page_title'] }} - Main Page</title>
-    <link rel="shortcut icon" href="{{ asset('img/logo/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ secure_asset('img/logo/favicon.ico') }}">
     @include('layout.lobby.header')
     @stack('css')
     <style>
@@ -15,7 +15,7 @@
             height: 100%;
             width: 100%;
             background: #8b98bd;
-            background-image: url("{{url()->asset('img/logo/bg-lobby.jpg')}}");
+            background-image: url("{{url()->secure_asset('img/logo/bg-lobby.jpg')}}");
             min-height: auto;
             font-family: 'Source Sans Pro', sans-serif;
             background-size: 100%;

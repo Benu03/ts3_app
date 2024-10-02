@@ -12,11 +12,11 @@ $site       = DB::connection('ts3')->table('cp.konfigurasi')->first();
       var quantity      = $('#' + product_id).val();
       var pengalihan    = $('#' + product_id).val();
       $.ajax({
-        url : "{{ asset('/') }}keranjang/tambah",
+        url : "{{ secure_asset('/') }}keranjang/tambah",
         method : "POST",
         data : {product_id: product_id, product_name: product_name, product_price: product_price, quantity: quantity,pengalihan:pengalihan},
         success: function(data){
-          window.location.href = "{{ asset('/') }}keranjang";
+          window.location.href = "{{ secure_asset('/') }}keranjang";
         }
       });
     });
@@ -24,11 +24,11 @@ $site       = DB::connection('ts3')->table('cp.konfigurasi')->first();
     $(document).on('click','.romove_cart',function(){
       var row_id=$(this).attr("id"); 
       $.ajax({
-        url : "{{ asset('/') }}keranjang/hapus",
+        url : "{{ secure_asset('/') }}keranjang/hapus",
         method : "POST",
         data : {row_id : row_id},
         success :function(data){
-          window.location.href = "{{ asset('/') }}keranjang";
+          window.location.href = "{{ secure_asset('/') }}keranjang";
         }
       });
     });
@@ -76,11 +76,11 @@ $site       = DB::connection('ts3')->table('cp.konfigurasi')->first();
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ asset('/') }}">Beranda</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ asset('produk') }}">Lihat Produk</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ asset('pemesanan') }}">Pemesanan Produk</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ asset('pembayaran') }}">Cara Pembayaran</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ asset('kontak') }}">Kontak</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ secure_asset('/') }}">Beranda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ secure_asset('produk') }}">Lihat Produk</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ secure_asset('pemesanan') }}">Pemesanan Produk</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ secure_asset('pembayaran') }}">Cara Pembayaran</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ secure_asset('kontak') }}">Kontak</a></li>
             </ul>
           </div>
 
@@ -130,15 +130,15 @@ $( ".tanggal" ).datepicker({
   yearRange: "1920:2020"
 });
 </script>
-  <script src="{{ asset('public/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('public/template/assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
-  <script src="{{ asset('public/template/assets/vendor/php-email-form/validate.js') }}"></script>
-  <script src="{{ asset('public/template/assets/vendor/venobox/venobox.min.js') }}"></script>
-  <script src="{{ asset('public/template/assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
-  <script src="{{ asset('public/template/assets/vendor/counterup/counterup.min.js') }}"></script>
-  <script src="{{ asset('public/template/assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('public/template/assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/venobox/venobox.min.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/counterup/counterup.min.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/vendor/aos/aos.js') }}"></script>
   <!-- Template Main JS File -->
-  <script src="{{ asset('public/template/assets/js/main.js') }}"></script>
+  <script src="{{ secure_asset('public/template/assets/js/main.js') }}"></script>
 </body>
 </html>

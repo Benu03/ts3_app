@@ -20,7 +20,7 @@
         </ul>
     </div>
 @endif
-             <form action="{{ asset('proses_pemesanan') }}" method="post" accept-charset="utf-8">
+             <form action="{{ secure_asset('proses_pemesanan') }}" method="post" accept-charset="utf-8">
                {{ csrf_field() }}
                <input type="hidden" name="token_rahasia" value="72827582Uduagd86275gbdahgahgfa">
              
@@ -104,12 +104,12 @@
             </div>
 
             <div class="col-md-4">
-                <img src="{{ asset('public/upload/image/'.$site_config->gambar)}}" class="img img-thumbnail img-fluid">  
+                <img src="{{ secure_asset('public/upload/image/'.$site_config->gambar)}}" class="img img-thumbnail img-fluid">  
             </div>
 
             <div class="col-md-12">
                <hr>
-                <p>Anda sudah melakukan pembayaran? Silakan lakukan <a href="{{ asset('konfirmasi') }}">Konfirmasi Pembayaran</a>.</p>
+                <p>Anda sudah melakukan pembayaran? Silakan lakukan <a href="{{ secure_asset('konfirmasi') }}">Konfirmasi Pembayaran</a>.</p>
                 <hr>
              </div>     
           </div>

@@ -14,7 +14,7 @@
              
                 <div class="row">
                     <div class="col-lg-12 col-md-12 text-center pb-2">
-                        <img src="{{ asset('assets/upload/image/2.png') }}" alt="TS3 SYSTEM" style="width: 130px; height: auto;">
+                        <img src="{{ secure_asset('assets/upload/image/2.png') }}" alt="TS3 SYSTEM" style="width: 130px; height: auto;">
                     </div>
                     
                     <div class="col-lg-12 col-md-12 text-center pb-2" style="margin-top: 24px;">

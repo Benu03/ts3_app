@@ -33,7 +33,7 @@ $nav_layananf = $myprofil->nav_layanan();
 
                <ul class="lastest-products">
                   <?php foreach($nav_layananf as $nav_layananf) { ?>
-                  <li class="list-item col-sm-6"><img src="{{ asset('assets/upload/image/thumbs/'.$nav_layananf->gambar) }}" alt="{{ $nav_layananf->judul_berita }}"> <strong><a href="{{ asset('berita/layanan/'.$nav_layananf->slug_berita) }}">{{ $nav_layananf->judul_berita }}</a></strong> <span class="pdate"><i>Updated:</i> <?php echo tanggal('tanggal_id',$nav_layananf->tanggal_post) ?></span> </li>
+                  <li class="list-item col-sm-6"><img src="{{ secure_asset('assets/upload/image/thumbs/'.$nav_layananf->gambar) }}" alt="{{ $nav_layananf->judul_berita }}"> <strong><a href="{{ secure_asset('berita/layanan/'.$nav_layananf->slug_berita) }}">{{ $nav_layananf->judul_berita }}</a></strong> <span class="pdate"><i>Updated:</i> <?php echo tanggal('tanggal_id',$nav_layananf->tanggal_post) ?></span> </li>
                   <?php } ?>
                </ul>
             </div>
@@ -41,9 +41,9 @@ $nav_layananf = $myprofil->nav_layanan();
         
       </div>
       <div class="row footer-copyr">
-         <div class="col-md-4 col-sm-4"> <img src="{{ asset('assets/upload/image/'.$site_config->logo) }}" alt="" style="max-height: 35px; width: auto;"> </div>
+         <div class="col-md-4 col-sm-4"> <img src="{{ secure_asset('assets/upload/image/'.$site_config->logo) }}" alt="" style="max-height: 35px; width: auto;"> </div>
          <div class="col-md-8 col-sm-8">
-               <p><a target="_blank" href="{{ asset('/') }}">Copyright &copy;<?= date('Y'); ?> {{ website('namaweb') }}</a></p>
+               <p><a target="_blank" href="{{ secure_asset('/') }}">Copyright &copy;<?= date('Y'); ?> {{ website('namaweb') }}</a></p>
             </div>
       </div>
    </div>
@@ -51,14 +51,14 @@ $nav_layananf = $myprofil->nav_layanan();
 <!--Footer End--> 
 </div>
 <!--   JS Files Start  --> 
-<script src="{{ asset('assets/aws/js/jquery-3.3.1.min.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/jquery-migrate-1.4.1.min.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/popper.min.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/bootstrap.min.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/owl.carousel.min.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/jquery.prettyPhoto.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/isotope.min.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/slick.min.js') }}"></script> 
-<script src="{{ asset('assets/aws/js/custom.js') }}"></script>
+<script src="{{ secure_asset('assets/aws/js/jquery-3.3.1.min.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/jquery-migrate-1.4.1.min.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/popper.min.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/bootstrap.min.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/owl.carousel.min.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/jquery.prettyPhoto.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/isotope.min.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/slick.min.js') }}"></script> 
+<script src="{{ secure_asset('assets/aws/js/custom.js') }}"></script>
 </body>
 </html>

@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&amp;display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/fontawesome.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/v4-shims.min.css') }}">
+  <link rel="stylesheet" href="{{secure_asset('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{ secure_asset('plugins/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ secure_asset('plugins/fontawesome-free/css/fontawesome.min.css') }}">
+  <link rel="stylesheet" href="{{ secure_asset('plugins/fontawesome-free/css/v4-shims.min.css') }}">
 
   <!-- Google Tag Manager -->
   {{-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -302,8 +302,8 @@ line-height: 20px;
     </div>
   </div>
   </div>
-  <script src=" {{asset('plugins/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('plugins/jquery-validation/jquery.validate.js')}}"></script>
+  <script src=" {{secure_asset('plugins/jquery/jquery.min.js')}}"></script>
+  <script src="{{secure_asset('plugins/jquery-validation/jquery.validate.js')}}"></script>
 
 
   <script>

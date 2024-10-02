@@ -2,7 +2,7 @@
 $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Kontak')->orderBy('id_heading','DESC')->first();
  ?>
 <!--Inner Header Start-->
-<section class="wf100 p80 inner-header" style="background-image: url('{{ asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
+<section class="wf100 p80 inner-header" style="background-image: url('{{ secure_asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
    <div class="container">
       <h1>{{ $title }}</h1>
    </div>
@@ -41,7 +41,7 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','Kontak')->o
       <div class="row">
          <div class="col-md-6">
             <div class="contact-form">
-               <form action="{{ asset('kirim-kontak') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+               <form action="{{ secure_asset('kirim-kontak') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                   {{ csrf_field() }}
                <ul class="cform">
                   <li class="half pr-15">

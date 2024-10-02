@@ -13,7 +13,7 @@
              
                 <div class="row">
                     <div class="col-lg-12 col-md-12 text-center pb-2">
-                        <img src="{{ asset('img/logo/puninarlogo.png') }}" alt="PUNINAR SYSTEM" style="width: 300px; height: auto;">
+                        <img src="{{ secure_asset('img/logo/puninarlogo.png') }}" alt="PUNINAR SYSTEM" style="width: 300px; height: auto;">
                     </div>
                     
                   

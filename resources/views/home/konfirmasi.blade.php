@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-12 text-left">
               
-              <p class="text-center">Baca informasi Panduan pembayaran sebelum melakukaan konfirmasi. <a href="{{ asset('pembayaran') }}">Panduan Pembayaran</a>.</p>
+              <p class="text-center">Baca informasi Panduan pembayaran sebelum melakukaan konfirmasi. <a href="{{ secure_asset('pembayaran') }}">Panduan Pembayaran</a>.</p>
               <hr>
               @if ($errors->any())
     <div class="alert alert-danger">
@@ -23,7 +23,7 @@
     </div>
 @endif
 
-<form action="{{ asset('konfirmasi_proses') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<form action="{{ secure_asset('konfirmasi_proses') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 {{ csrf_field() }}
 
 <?php if($pemesanan==""){}else{ ?>

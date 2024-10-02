@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?php echo $title ?></title>
-	<link rel="stylesheet" href="{{ asset('public/css/print.css') }}" media="print">
-	<link rel="stylesheet" href="{{ asset('public/css/print.css') }}" media="screen">
+	<link rel="stylesheet" href="{{ secure_asset('public/css/print.css') }}" media="print">
+	<link rel="stylesheet" href="{{ secure_asset('public/css/print.css') }}" media="screen">
 </head>
 <body>
 	<div class="cetak">

@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-12">
               <p class="text-right">
-                <a href="{{ asset('cetak/'.$pemesanan->token_transaksi) }}" class="btn btn-danger btn-sm" target="_blank">
+                <a href="{{ secure_asset('cetak/'.$pemesanan->token_transaksi) }}" class="btn btn-danger btn-sm" target="_blank">
                   <i class="fa fa-file-pdf"></i> Cetak Bukti Pemesanan
                 </a>
               </p>
@@ -71,7 +71,7 @@
                 </tbody>
               </table>
               <hr>
-              <p>Jika Anda telah melakukan pembayaran. Anda dapat melakukan <a href="{{ asset('konfirmasi') }}">Konfirmasi Pembayaran</a> atau <a href="{{ asset('produk') }}">Melihat Produk Lainnya</a></p>
+              <p>Jika Anda telah melakukan pembayaran. Anda dapat melakukan <a href="{{ secure_asset('konfirmasi') }}">Konfirmasi Pembayaran</a> atau <a href="{{ secure_asset('produk') }}">Melihat Produk Lainnya</a></p>
             </div>
           </div>
         </div>

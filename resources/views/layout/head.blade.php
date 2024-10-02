@@ -10,22 +10,22 @@ $site_config = DB::connection('ts3')->table('cp.konfigurasi')->first();
 <meta name="keywords" content="{{ $keywords }}">
 <meta name="author" content="{{ $site_config->namaweb }}">
 <!-- icon -->
-<link rel="shortcut icon" href="{{ asset('assets/upload/image/'.$site_config->icon) }}">
+<link rel="shortcut icon" href="{{ secure_asset('assets/upload/image/'.$site_config->icon) }}">
 <!-- Font Awesome -->
-<link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
 <!-- CSS FILES START -->
-{{-- <script src="{{ asset('assets/sweetalert/js/sweetalert.min.js') }}"></script> --}}
+{{-- <script src="{{ secure_asset('assets/sweetalert/js/sweetalert.min.js') }}"></script> --}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- angular -->
-{{-- <script src="{{ asset('assets/angular/angular.min.js') }}"></script>   --}}
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/sweetalert/css/sweetalert.css') }}">
-<link href="{{ asset('assets/aws/css/custom.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/aws/css/color.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/aws/css/responsive.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/aws/css/owl.carousel.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/aws/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/aws/css/prettyPhoto.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/aws/css/all.min.css') }}" rel="stylesheet">
+{{-- <script src="{{ secure_asset('assets/angular/angular.min.js') }}"></script>   --}}
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/sweetalert/css/sweetalert.css') }}">
+<link href="{{ secure_asset('assets/aws/css/custom.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('assets/aws/css/color.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('assets/aws/css/responsive.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('assets/aws/css/owl.carousel.min.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('assets/aws/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('assets/aws/css/prettyPhoto.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('assets/aws/css/all.min.css') }}" rel="stylesheet">
 <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="c71a3709-3d11-44de-9713-ff377233acd3";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 <style>
 .img-logots3{

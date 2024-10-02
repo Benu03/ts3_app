@@ -2,7 +2,7 @@
 $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','About')->orderBy('id_heading','DESC')->first();
  ?>
 <!--Inner Header Start-->
-<section class="wf100 p80 inner-header" style="background-image: url('{{ asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
+<section class="wf100 p80 inner-header" style="background-image: url('{{ secure_asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
    <div class="container">
       <h1>{{ $title }}</h1>
    </div>
@@ -21,13 +21,13 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','About')->or
                   
                   
                   <div class="wrapper33">
-                     <img src="{{ asset('assets/upload/image/'.$site_config->gambar) }}" class="img-logots3">  
+                     <img src="{{ secure_asset('assets/upload/image/'.$site_config->gambar) }}" class="img-logots3">  
                    </div>
 
                </div>
             </div>
             {{-- <div class="col-lg-5">
-               <a href="#"><img src="{{ asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail border border-0"></a>
+               <a href="#"><img src="{{ secure_asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail border border-0"></a>
             </div> --}}
          </div>
       </div>
@@ -37,7 +37,7 @@ $bg   = DB::connection('ts3')->table('cp.heading')->where('halaman','About')->or
 $bg2   = DB::connection('ts3')->table('cp.heading')->where('halaman','Team')->orderBy('id_heading','DESC')->first();
  ?>
 <!--Inner Header Start-->
-<section class="wf100 p100 inner-header" style="background-image: url('{{ asset('assets/upload/image/'.$bg2->gambar) }}'); background-position: bottom center;">
+<section class="wf100 p100 inner-header" style="background-image: url('{{ secure_asset('assets/upload/image/'.$bg2->gambar) }}'); background-position: bottom center;">
    <div class="container text-center">
       <h1>{{ $bg2->judul_heading }}</h1>
    </div>
@@ -63,7 +63,7 @@ $bg2   = DB::connection('ts3')->table('cp.heading')->where('halaman','Team')->or
             <!--Blog Post Start-->
             <div class="col-lg-3 col-md-6">
                <div class="event-post">
-                  <div class="event-thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="{{ asset('assets/upload/staff/'.$staff->gambar) }}" alt="{{ $staff->nama_staff }}"></div>
+                  <div class="event-thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="{{ secure_asset('assets/upload/staff/'.$staff->gambar) }}" alt="{{ $staff->nama_staff }}"></div>
                   <div class="event-txt">
                      <h6><a href="#">{{ $staff->nama_staff }}</a></h6>
                      <p class="venue"><span>{{ $staff->jabatan }}</span></p>
@@ -89,10 +89,10 @@ $bg2   = DB::connection('ts3')->table('cp.heading')->where('halaman','Team')->or
 
             <div class="col-md-4 col-sm-6">
                <div class="volbox">
-                  <img src="{{ asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid">
+                  <img src="{{ secure_asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid">
                   <h6>{{ $layanan->judul_berita }}</h6>
                   <p>{{ $layanan->keywords }}</p>
-                  <a href="{{ asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
+                  <a href="{{ secure_asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
                </div>
             </div>
             <!--box  end--> 

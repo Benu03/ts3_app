@@ -8,7 +8,7 @@
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center text-white p-4"
                                     style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                                    <img src="{{ asset('img/logo/user.png') }}"
+                                    <img src="{{ secure_asset('img/logo/user.png') }}"
                                         alt="Avatar" class="img-fluid rounded-circle mb-3" style="width: 80px;">
                                     <h5 class="mb-0" style="text-transform: uppercase;"> {{ Session::get('user')['full_name'] }}</h5>
                                     <p class="mb-1">{{ Session::get('user')['username'] }}</p>

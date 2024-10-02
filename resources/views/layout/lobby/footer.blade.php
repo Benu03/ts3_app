@@ -63,62 +63,62 @@
 
 
 <!-- jQuery -->
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- jQuery Block UI -->
-<script src="{{ asset('plugins/jquery/jquery-block-ui.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/jquery/jquery-block-ui.min.js') }}"></script>
 <!-- jQuery Validate -->
-<script src="{{ asset('plugins/jquery-validation/jquery.validate.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/jquery-validation/jquery.validate.min.js') }}"></script>
 <!-- dataTable -->
-<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <!-- Bootstrap 4 -->
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Sparkline -->
-<script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>
+<script src="{{ secure_asset('plugins/sparklines/sparkline.js') }}"></script>
 <!-- ChartJS -->
-<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/chart.js/Chart.min.js') }}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
-<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
-<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ secure_asset('plugins/moment/moment.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- datetimepicker -->
-<script src="{{ asset('plugins/datetimepicker/js/tempus-dominus.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datetimepicker/js/tempus-dominus.min.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Summernote -->
-<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- Sweetalert2 -->
-<script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- overlayScrollbars -->
-<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- dataTable -->
-<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-fixedcolumns/js/dataTables.fixedColumns.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-fixedcolumns/js/dataTables.fixedColumns.min.js') }}"></script>
 <!-- dataTable button / export-->
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-buttons/js/jszip.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-buttons/js/jszip.min.js') }}"></script>
 <!-- dataTable Group-->
-<script src="{{ asset('plugins/datatables-rowgroup/js/dataTables.rowGroup.min.js') }}"></script>
-<script src="{{ asset('plugins/datatables-rowgroup/js/rowGroup.bootstrap4.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-rowgroup/js/dataTables.rowGroup.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/datatables-rowgroup/js/rowGroup.bootstrap4.min.js') }}"></script>
 <!-- Select 2 -->
-<script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/select2/js/select2.min.js') }}"></script>
 <!-- Select Picker -->
-<script src="{{ asset('plugins/selectpicker/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/selectpicker/js/bootstrap-select.min.js') }}"></script>
 <!-- Filsave -->
-<script src="{{ asset('plugins/filedownload/js/filedownload.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/filedownload/js/filedownload.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('dist/js/adminlte.js') }}"></script>
-<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
-<script src="{{ asset('dist/js/custom/custom.js') }}"></script>
+<script src="{{ secure_asset('dist/js/adminlte.js') }}"></script>
+<script src="{{ secure_asset('dist/js/pages/dashboard.js') }}"></script>
+<script src="{{ secure_asset('dist/js/custom/custom.js') }}"></script>
 <!-- PDF Make -->
-<script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}"></script>
-<script src="{{ asset('plugins/pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ secure_asset('plugins/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/pdfmake/vfs_fonts.js') }}"></script>
 
 {{-- DateTimePicker Jquery --}}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -126,6 +126,6 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 <!-- TOASTR -->
-<script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
+<script src="{{ secure_asset('plugins/toastr/toastr.min.js') }}"></script>
 
 @include('main.lobby.js')

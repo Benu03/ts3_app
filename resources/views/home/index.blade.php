@@ -11,7 +11,7 @@
                      <?php } ?>
                   </div>
                </div>
-               <img src="{{ asset('assets/upload/image/'.$slider->gambar) }}" alt=""> 
+               <img src="{{ secure_asset('assets/upload/image/'.$slider->gambar) }}" alt=""> 
             </div>
             <?php } ?>
          </section>
@@ -24,11 +24,11 @@
                   <?php foreach($layanan as $layanan) { ?>
                      <div class="col-md-4 col-sm-12">
                         <br>
-                        <img src="{{ asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid">
+                        <img src="{{ secure_asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid">
                         <div class="volbox">
                            <h6>{{ $layanan->judul_berita }}</h6>
                            <p>{{ $layanan->keywords }}</p>
-                           <a href="{{ asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
+                           <a href="{{ secure_asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
                         </div>
                      </div>
                      <!--box  end--> 
@@ -49,13 +49,13 @@
 
 
                            {{-- <h2>{{ $site_config->nama_singkat }}</h2> --}}
-                           {{-- <img src="{{ asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail border border-0" class="img-fluid" width="500" height="500"> --}}
+                           {{-- <img src="{{ secure_asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail border border-0" class="img-fluid" width="500" height="500"> --}}
 
                         
                            <?php echo $site_config->tentang ?>
 
                            <div class="wrapper33">
-                              <img src="{{ asset('assets/upload/image/'.$site_config->gambar) }}" class="img-logots3">  
+                              <img src="{{ secure_asset('assets/upload/image/'.$site_config->gambar) }}" class="img-logots3">  
                             </div>
                        
 
@@ -64,9 +64,9 @@
                         </div>
                         
                      </div>
-                     <a href="{{ asset('kontak') }}" class="btn btn-md" style="color: #ffffff; background-color: #32af81; border-color: #32af81"><i class="fas fa-id-card-alt"></i> Kontak Kami</a> 
+                     <a href="{{ secure_asset('kontak') }}" class="btn btn-md" style="color: #ffffff; background-color: #32af81; border-color: #32af81"><i class="fas fa-id-card-alt"></i> Kontak Kami</a> 
                      {{-- <div class="col-lg-5">
-                        <a href="#"><img src="{{ asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail border border-0" class="img-fluid" width="100" height="100">
+                        <a href="#"><img src="{{ secure_asset('assets/upload/image/'.$site_config->gambar) }}" alt="{{ $site_config->nama_singkat }}" class="img img-fluid img-thumbnail border border-0" class="img-fluid" width="100" height="100">
                      </div> --}}
                   </div>
                </div>
@@ -87,23 +87,23 @@
                 <div class="carousel-item active" data-interval="1500">
                     <div class="row">
                         <div class="col text-center mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ asset('assets/upload/client/pnm.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ secure_asset('assets/upload/client/pnm.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ asset('assets/upload/client/polytron.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ secure_asset('assets/upload/client/polytron.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ asset('assets/upload/client/mbm.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ secure_asset('assets/upload/client/mbm.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ asset('assets/upload/client/btpn_syariah.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ secure_asset('assets/upload/client/btpn_syariah.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ asset('assets/upload/client/phapros.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail border border-0" src="{{ secure_asset('assets/upload/client/phapros.png') }}"  alt="Image 1"/>
                         </div>
             
                        
@@ -113,23 +113,23 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col text-center mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ asset('assets/upload/client/glory.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ secure_asset('assets/upload/client/glory.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ asset('assets/upload/client/helmut.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ secure_asset('assets/upload/client/helmut.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ asset('assets/upload/client/distambun.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ secure_asset('assets/upload/client/distambun.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ asset('assets/upload/client/spj.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ secure_asset('assets/upload/client/spj.png') }}"  alt="Image 1"/>
                         </div>
             
                         <div class="col mr-1">
-                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ asset('assets/upload/client/uns.png') }}"  alt="Image 1"/>
+                        <img class="rounded mx-auto d-block img-thumbnail  border border-0" src="{{ secure_asset('assets/upload/client/uns.png') }}"  alt="Image 1"/>
                         </div>
             
                       

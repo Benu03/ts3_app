@@ -40,10 +40,10 @@ class authCustom
             $responseSession = Http::withHeaders([
                 'Content-Type' => 'application/json',
                 'key-service' => $keyPun,
-                'timestamp' => $timestamp
-            ])->post(config('static.url_access_session'), $body);
+                'timestamp' => $timestamp])->withoutVerifying()
+                ->post(config('static.url_access_session'), $body);
     
-
+                
             $responseSessionData = json_decode($responseSession->getBody()->getContents(), true);
 
            

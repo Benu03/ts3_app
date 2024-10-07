@@ -106,11 +106,11 @@
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-widget="" href="{{route('lobby')}}" role="button">
                         <i class="fa fa-computer"></i>
                     </a>
-                </li>
+                </li> --}}
               
                 <li class="nav-item dropdown">
                     <a class="nav-link" id="role_name" data-toggle="dropdown" href="#">
@@ -123,10 +123,12 @@
                               <i class="fas fa-user-circle"></i> Profile
                                </strong></span></a> 
                       
-                          <a class="nav-link loglog text-right" id="setting" href="{{route('option')}}">
-                            <span class="dropdown-item dropdown-header"> <strong>
-                              <i class="nav-icon fas fa-cog"></i> Option
-                               </strong></span></a> 
+                    
+
+                               <a class="nav-link loglog text-right" id="changepassword" href="#" data-toggle="modal" data-target="#changePassword">
+                                <span class="dropdown-item dropdown-header"> <strong>
+                                  <i class="nav-icon fas fa-key"></i> Change Password
+                                   </strong></span></a> 
                                
                           <a class="nav-link loglog" id="logout" href="#" onclick="logout()">
                                 <span class="dropdown-item dropdown-header text-right"> <strong>
@@ -150,6 +152,7 @@
     <!-- /.content-wrapper -->
     @include('global.modal.wrapper',['id_modal'=>'modal-notif','modal_content'=>'modal-notif-content'])
     @include('global.modal.profile')
+    @include('global.modal.changepassword')
     @include('layout.lobby.footer')
     @stack('js')
     <script>

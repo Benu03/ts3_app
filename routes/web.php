@@ -45,12 +45,16 @@ Route::get('galeri', [Galeri::class, 'index']);
 Route::get('galeri/detail/{par1}', [Galeri::class, 'detail']);
 Route::get('otp', [HomeController::class, 'otp'])->name('otp_page');
 Route::post('send-otp', [HomeController::class, 'sendOtp'])->name('send-otp');
-Route::get('reset-password', [HomeController::class, 'reset_password'])->name('reset_password_page');
-Route::post('reset-password', [Login::class, 'reset_password'])->name('reset_password');
 Route::get('success', [HomeController::class, 'success'])->name('success_reset');
+Route::post('change-password', [HomeController::class, 'change_password'])->name('change_password');
+Route::get('get-project', [WelcomeController::class, 'get_data_portal'])->name('get_projects');
+Route::get('get-detail', [WelcomeController::class, 'get_detail_app'])->name('get_detail_app');
+
 
 Route::group(['middleware' => ['auth.custom']], function() {
     Route::get('lobby', [HomeController::class, 'lobby'])->name('lobby');
     Route::post('logout', [HomeController::class, 'logout'])->name('logout');
-    Route::get('/option', [OptionController::class, 'index'])->name('option');
+    Route::get('/get-notification', [OptionController::class, 'getNotifications'])->name('getnotif');
+    Route::post('/update-notif', [OptionController::class, 'updateNotifIsread'])->name('updatenotif');
+
 });

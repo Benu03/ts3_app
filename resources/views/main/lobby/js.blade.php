@@ -1,4 +1,4 @@
-@include('layout.blockUI')
+{{-- @include('layouts.blockUI') --}}
 
 <script>
     /* DATATABLE */

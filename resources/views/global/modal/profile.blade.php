@@ -1,6 +1,6 @@
 <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
+        <div class="modal-content rounded-modal">
             <div class="modal-body p-0"> <!-- Menghilangkan padding dari modal body -->
                 <div class="row d-flex justify-content-center align-items-center h-100 mx-0"> <!-- Menghilangkan margin kanan dan kiri -->
                     <div class="col col-lg-12 px-0"> <!-- Menghilangkan padding dari kolom -->
@@ -36,16 +36,7 @@
                                             </div>
                                            
                                         </div>
-                                        {{-- <div class="row mb-4">
-                                            <div class="col-6">
-                                                <h6>Phone</h6>
-                                                <p class="text-muted mb-0">{{ Session::get('user')['phone'] }}</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6>Whatsapps</h6>
-                                                <p class="text-muted mb-0">{{ Session::get('user')['wa_number'] }}</p>
-                                            </div>
-                                        </div> --}}
+                
 
                                         <div class="row mb-4">
                                             <div class="col-6">
@@ -79,3 +70,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    .rounded-modal {
+        border-radius: 20px;
+    }
+  </style>

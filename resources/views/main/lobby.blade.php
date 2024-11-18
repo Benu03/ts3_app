@@ -8,23 +8,12 @@
    
     <section class="content">
         <div class="container-fluid ">
-           
-            <div class="content" style="padding:100px 100px 0 100px;">
+          
+            <div class="content" style="padding:100px 150px 0 150px;">
                 
              
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 text-center pb-2">
-                        <img src="{{ asset('assets/upload/image/2.png') }}" alt="TS3 SYSTEM" style="width: 130px; height: auto;">
-                    </div>
-                    
-                    <div class="col-lg-12 col-md-12 text-center pb-2" style="margin-top: 24px;">
-                        <strong style="font-size:20px;font-weight:700;">Aplikasi Modul Anda</strong>
-                    </div>
-                    <div class="col-lg-12 col-md-12 text-center pb-5">
-                        <span style="font-size:14px;font-weight:400;">
-                            Selamat datang! Berikut adalah daftar aplikasi yang dapat Anda akses. Jelajahi dan kelola aplikasi yang tersedia di bawah ini.
-                        </span>
-                    </div>
+              
                     <div class="col-lg-12 col-md-12 row d-flex justify-content-center">
                        
                     @php
@@ -53,7 +42,7 @@
                                     <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 30px; background-color: rgba(255, 255, 255, 0.5);">
                                         <div class="row align-items-center">
                                             <div class="col-4 col-md-4 text-center text-md-left">
-                                                <img src="{{ $module['image_module'] }}" alt="TS3 SYSTEM" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px;">
+                                                <img src="{{ $module['image_module'] }}" alt="PUNINAR SYSTEM" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px; border-radius: 15%;">
                                             </div>
                                             <div class="col-8 col-md-8">
                                                 <div class="d-flex flex-column justify-content-center h-100 text-center text-md-left">
@@ -75,7 +64,6 @@
 
 
 
-
                         </div>
                         
                         @endif
@@ -90,4 +78,5 @@
 
 
 @endsection
+
 

@@ -98,7 +98,7 @@
 <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-fixedcolumns/js/dataTables.fixedColumns.min.js') }}"></script>
 <!-- dataTable button / export-->
-<script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+{{-- <script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script> --}}
 <script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
@@ -114,7 +114,7 @@
 <script src="{{ asset('plugins/filedownload/js/filedownload.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
-<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+{{-- <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script> --}}
 <script src="{{ asset('dist/js/custom/custom.js') }}"></script>
 <!-- PDF Make -->
 <script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}"></script>

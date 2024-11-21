@@ -11,19 +11,7 @@
     @include('layout.lobby.header')
     @stack('css')
     <style>
-        /* body {
-            height: 100%;
-            width: 100%;
-            background: #8b98bd;
-            background-image: url("{{url()->asset('img/logo/5320490.jpg')}}");
-            background-image: url("{{url()->asset('img/logo/2222.png')}}");
-            background-image: url("{{url()->asset('img/logo/3333.png')}}");
-            min-height: auto;
-            font-family: 'Source Sans Pro', sans-serif;
-            background-size: 100%;
-            background-repeat: no-repeat;
-        
-        } */
+      
         body {
             height: 100%;
             width: 100%;
@@ -412,7 +400,7 @@
       }
 
 
-      setInterval(changeBackground, 12000);
+      setInterval(changeBackground, 5000);
 
       // Set background pertama kali
       changeBackground();

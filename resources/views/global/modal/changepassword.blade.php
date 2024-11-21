@@ -62,7 +62,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" style="background-color: #FFFFFF !important;color:#464F60 !important; border: 1px solid #464F60;" data-dismiss="modal">CANCEL</button>
-                <button type="submit" class="btn" id="updatePasswordBtn" style="background-color: #2E308A;color: white;">
+                <button type="submit" class="btn" id="updatePasswordBtn" style="background-color: #2bc24e;color: white;">
                     SAVE CHANGES
                 </button>
             </div>

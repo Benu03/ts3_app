@@ -1,24 +1,6 @@
 {{-- @include('layouts.blockUI') --}}
 
 <script>
-    /* DATATABLE */
-    $.fn.dataTable.ext.errMode = 'none';
-    $.extend(true, $.fn.dataTable.defaults, {
-        language:  {
-            processing: '<div class="text-center"><i class="fa fa-spinner fa-spin fa-3x fa-fw text-primary"></i></div> <div class="text-center"> <span>Processing...</span></div>'
-        },
-    });
-    /* DATATABLE */
-    var matches = document.querySelectorAll(".os-content-glue");
-    var match = $('body').hasClass('sidebar-collapse');
-</script>
-<script>
-    // Tootip
-    $('[data-toggle="tooltip"]').tooltip();
-    // End Tooltip
-
-</script>
-<script>
     /* GLOBAL JS */
     var debug = '{{config("static.app_debug")}}';
     $.ajaxSetup({

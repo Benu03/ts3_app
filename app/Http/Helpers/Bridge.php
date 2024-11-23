@@ -26,13 +26,13 @@ class Bridge {
             'verify' => false,
             'http_errors' => false,
         ]);
-
+       
         $body           = json_encode($params['body']);
         $request        = new GuzzleRequest('POST', $params['url'], $headers, $body);
         $res            = $client->sendAsync($request)->wait();
         $content_json   = $res->getBody()->getContents();
         $content_arr    = json_decode($content_json,1);
-        
+      
         return $content_arr;
     }
 
@@ -103,4 +103,6 @@ class Bridge {
         $content_arr    = json_decode($content_json,1);
         return $content_arr;
     }
+
+
 }

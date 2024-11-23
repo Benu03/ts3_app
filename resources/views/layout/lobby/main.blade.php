@@ -297,7 +297,7 @@
                                       if (clickedNotification) {
                                         document.getElementById('notification-modal-body').innerHTML = `
                                         <div class="card border-light shadow-sm">
-                                           <span class="badge bg-primary text-white" style="font-size: 1.2rem;">${clickedNotification.module}</span>
+                                           <span class="badge text-white" style="background-color: #6dcbd3; font-size: 1.2rem;">${clickedNotification.module}</span>
                                             <div class="card-body">
                                                 <h5 class="card-title d-flex justify-content-between align-items-center">
                                                     <span><strong>${clickedNotification.title}</strong></span>
@@ -511,7 +511,7 @@
             Swal.fire({
               icon: 'success',
               title: 'Success',
-              text: response.message,
+            //   text: response.message,
               timer: 3000,
               showConfirmButton: false
             });

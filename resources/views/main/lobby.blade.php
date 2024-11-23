@@ -9,9 +9,21 @@
     <section class="content">
         <div class="container-fluid ">
           
-            <div class="content" style="padding:100px 150px 0 150px;">
+            <div class="content" style="padding:80px 150px 0 150px;">
                 
-             
+                
+                <div id="bannerSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="margin-bottom: 20px;">
+                    <div class="carousel-inner">
+                        @foreach($data['banners'] as $index => $banner)
+                            <div class="carousel-item @if($index == 0) active @endif">
+                                <img src="{{ $banner['image_url'] }}" class="d-block w-100" alt="{{ $banner['alt_text'] }}">
+                            </div>
+                        @endforeach
+                    </div>
+                    
+                  
+                </div>
+
                 <div class="row">
               
                     <div class="col-lg-12 col-md-12 row d-flex justify-content-center">
@@ -75,7 +87,18 @@
             </div>
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Inisialisasi Carousel Secara Manual -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myCarousel = document.getElementById('bannerSlider');
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 3000, // Waktu antar slide (3 detik)
+                ride: 'carousel' // Mulai carousel otomatis
+            });
+        });
+    </script>
 
 @endsection
 

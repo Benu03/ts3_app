@@ -53,6 +53,20 @@ class HomeController extends Controller
        if($responseSessionData['status'] == 200)
         {
 
+            $banner = [
+                [
+                    'image_url' => 'https://via.placeholder.com/1200x80?text=First+Banner', // Sample image URL
+                    'alt_text' => 'First Banner'
+                ],
+                [
+                    'image_url' => 'https://via.placeholder.com/1200x80?text=Second+Banner', // Another sample image URL
+                    'alt_text' => 'Second Banner'
+                ],
+                [
+                    'image_url' => 'https://via.placeholder.com/1200x80?text=Third+Banner', // Another sample image URL
+                    'alt_text' => 'Third Banner'
+                ]
+            ];
         
         $data = [
             'page_title'    => 'TS3 APP',
@@ -60,6 +74,7 @@ class HomeController extends Controller
             'secretKey' =>  config('static.key_static'),
             'module'   => session()->get('module'),
             'user'  => session()->get('user'),
+            'banners' => $banner 
         ];
 
         return view('main.lobby',compact('data'));
@@ -73,6 +88,20 @@ class HomeController extends Controller
 
     public function lobby(){
        
+        $banner = [
+            [
+                'image_url' => 'https://via.placeholder.com/1200x80?text=First+Banner', 
+                'alt_text' => 'First Banner'
+            ],
+            [
+                'image_url' => 'https://via.placeholder.com/1200x80?text=Second+Banner', 
+                'alt_text' => 'Second Banner'
+            ],
+            [
+                'image_url' => 'https://via.placeholder.com/1200x80?text=Third+Banner', 
+                'alt_text' => 'Third Banner'
+            ]
+        ];
      
         $data = [
             'page_title' => 'TS3 Indonesia',
@@ -80,6 +109,7 @@ class HomeController extends Controller
             'secretKey' =>  config('static.key_static'),
             'module'   => session()->get('module'),
             'user'  => session()->get('user'),
+            'banners' => $banner 
         ];
         
 
@@ -185,6 +215,43 @@ class HomeController extends Controller
         return view('login.success_reset');
     }
     
+
+    public function change_password()
+    {
+        
+        $username = request()->username;
+        $password = request()->password;
+        $oldpassword = request()->oldpwd;
+
+
+        $params = [
+            'url' => config('static.url_access').'/auth/change-password',
+            'body' => [
+                'username'      => $username,
+                'old_password' => $oldpassword,
+                'new_password' => $password,
+                'language' => 'id'
+
+            ]
+        ];
+
+        $response = Bridge::BuildCurlApiPA($params);
+
+        if($response['status'] == 200){
+            return response([
+                'status'    => true,
+                'message'   => $response
+            ], 200);
+        }
+        else{
+            return response([
+                'status'    => false,
+                'message'   => $response['message']
+            ], 400);
+        }
+
+
+    }
     
 }
 

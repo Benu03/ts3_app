@@ -22,6 +22,7 @@ class authCustom
      */
     public function handle(Request $request, Closure $next)
     {
+        date_default_timezone_set('Asia/Jakarta');
         $usersession = session()->get('user');
         if (!$usersession) {
             return $this->handleSessionExpired($request);
@@ -35,7 +36,7 @@ class authCustom
         $timestamp = Carbon::now()->format('Y-m-d H:i:s');
         $encryptionKey = config('static.key_access') . $timestamp;
         $keyPun = hash(config('static.key_hash'), $encryptionKey);
-
+        
         try {
             $responseSession = Http::withHeaders([
                 'Content-Type' => 'application/json',

@@ -67,7 +67,7 @@ class Login extends Controller
 
                 Session::put('user', $params);
                 Session::put('module', $response['data']['module']);
-                                
+            
                 return redirect()->route('lobby')->with(['sukses' => 'Login Berhasil']);
 
             }else if($response['status'] == 401){

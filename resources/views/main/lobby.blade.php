@@ -54,13 +54,19 @@
                                     <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 30px; background-color: rgba(255, 255, 255, 0.5);">
                                         <div class="row align-items-center">
                                             <div class="col-4 col-md-4 text-center text-md-left">
-                                                <img src="{{ $module['image_module'] }}" alt="PUNINAR SYSTEM" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px; border-radius: 15%;">
+                                                {{-- <img src="{{ $module['image_module'] }}" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px; border-radius: 50%;"> --}}
+                                                <div 
+                                                style="width: 70px; height: 70px; overflow: hidden; border-radius: 50%; margin-right: 25px;">
+                                                <img 
+                                                    src="{{ $module['image_module'] }}" 
+                                                    style="width: 100%; height: 100%; object-fit: cover;">
+                                                </div>
                                             </div>
                                             <div class="col-8 col-md-8">
                                                 <div class="d-flex flex-column justify-content-center h-100 text-center text-md-left">
-                                                    <span style="color: #2E308A; font-weight: 700; font-size: 16px;">{{ $module['module'] }}</span>
-                                                    <div style="margin-top: 10px; color: #898ac1; font-weight: 700; font-size: 12px;">
-                                                        Role: {{ $module['role'] }}
+                                                    <span style="color: #15c18e; font-weight: 700; font-size: 16px;">{{ $module['module'] }}</span>
+                                                    <div style="margin-top: 10px; color: #9e9fc7; font-weight: 700; font-size: 12px;">
+                                                        {{ $module['role'] }}
                                                         
                                                     </div>
                                                  

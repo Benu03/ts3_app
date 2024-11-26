@@ -90,19 +90,19 @@ class HomeController extends Controller
        
         $banner = [
             [
-                'image_url' => 'https://via.placeholder.com/1200x80?text=First+Banner', 
+                'image_url' => url('/img/logo/banner1.png'), 
                 'alt_text' => 'First Banner'
             ],
             [
-                'image_url' => 'https://via.placeholder.com/1200x80?text=Second+Banner', 
+                'image_url' => url('/img/logo/banner2.png'), 
                 'alt_text' => 'Second Banner'
             ],
             [
-                'image_url' => 'https://via.placeholder.com/1200x80?text=Third+Banner', 
+                'image_url' => url('/img/logo/banner3.png'), 
                 'alt_text' => 'Third Banner'
             ]
         ];
-     
+
         $data = [
             'page_title' => 'TS3 Indonesia',
             'page_url' => 'null',
@@ -209,6 +209,8 @@ class HomeController extends Controller
 
         return view('login.reset_password', compact('data'));
     }
+
+  
 
    
     public function success(){

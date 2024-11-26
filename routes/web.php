@@ -49,7 +49,8 @@ Route::get('success', [HomeController::class, 'success'])->name('success_reset')
 Route::post('change-password', [HomeController::class, 'change_password'])->name('change_password');
 Route::get('get-project', [WelcomeController::class, 'get_data_portal'])->name('get_projects');
 Route::get('get-detail', [WelcomeController::class, 'get_detail_app'])->name('get_detail_app');
-
+Route::get('reset-password-page', [HomeController::class, 'reset_password'])->name('reset_password_page');
+Route::post('reset-password', [Login::class, 'reset_password'])->name('reset_password');
 
 Route::group(['middleware' => ['auth.custom']], function() {
     Route::get('lobby', [HomeController::class, 'lobby'])->name('lobby');

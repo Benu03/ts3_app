@@ -7,7 +7,7 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ $data['page_title'] }} - Main Page</title>
-    <link rel="shortcut icon" href="{{ asset('img/logo/favicon.ico') }}">
+    {{-- <link rel="shortcut icon" href="{{ asset('img/logo/favicon.ico') }}"> --}}
     @include('layout.lobby.header')
     @stack('css')
     <style>

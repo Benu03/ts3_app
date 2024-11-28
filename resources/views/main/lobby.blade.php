@@ -12,11 +12,11 @@
             <div class="content" style="padding:80px 150px 0 150px;">
                 
                 
-                <div id="bannerSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="margin-bottom: 20px;">
+                <div id="bannerSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000" style="margin-bottom: 20px;">
                     <div class="carousel-inner">
                         @foreach($data['banners'] as $index => $banner)
                             <div class="carousel-item @if($index == 0) active @endif">
-                                <img src="{{ $banner['image_url'] }}" class="d-block w-100" alt="{{ $banner['alt_text'] }}">
+                                <img src="{{ $banner['image_url'] }}" class="d-block w-100" style="border-radius: 20px;" alt="{{ $banner['alt_text'] }}">
                             </div>
                         @endforeach
                     </div>
@@ -100,8 +100,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             var myCarousel = document.getElementById('bannerSlider');
             var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 3000, // Waktu antar slide (3 detik)
-                ride: 'carousel' // Mulai carousel otomatis
+                interval: 10000, 
+                ride: 'carousel'
             });
         });
     </script>

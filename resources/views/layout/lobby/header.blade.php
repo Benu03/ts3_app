@@ -49,4 +49,4 @@
 <!-- Select 2 -->
 <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
 <!-- ChartCSS -->
-<link rel="stylesheet" href="{{ asset('plugins/chart.js/chart.min.css') }}">
+

@@ -31,10 +31,48 @@
                     @php
                         $modules = $data['module'];
                     @endphp
+
+@foreach($modules as $module)
+@if(strpos($module['platform'], 'web') !== false)
+    <div class="col-lg-2 col-md-2 mb-2">
+        @php
+            $datapassing = [
+                'user' => $data['user'],
+                'module' => $module
+            ];
+            $datapassingJson = json_encode($datapassing);
+        @endphp
+
+        @if(config('app.env') == 'production')
+            <a href="{{ $module['url'] }}" class="card-link" 
+               onclick="openWithSession(event, '{{ $module['url'] }}', '{{ $datapassingJson }}')">
+        @elseif(config('app.env') == 'development')
+            <a href="{{ $module['url'] }}" class="card-link" 
+               onclick="openWithSessionDev(event, '{{ $module['local_url'] }}', '{{ $module['url'] }}', '{{ $datapassingJson }}')">
+        @endif
+
+            <div class="card" style="border-radius: 60px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; background-color: rgba(255, 255, 255, 0.149);">
+                <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 60px; background-color: rgba(255, 255, 255, 0.173); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div class="row align-items-center">
+                        <div class="col-12 d-flex flex-column align-items-center">
+                            <div style="width: 70px; height: 70px; overflow: hidden; border-radius: 50%; margin-bottom: 5px; display: flex; justify-content: center; align-items: center;">
+                                <img src="{{ $module['image_module'] }}" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <span style="color: #009568; font-weight: 700; font-size: 14px; text-align: center;">{{ $module['module'] }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+@endif
+@endforeach
+
+
                     
-                    @foreach($modules as $module)
+                    {{-- @foreach($modules as $module)
                       @if(strpos($module['platform'], 'web') !== false)
-                        <div class="col-lg-3 col-md-3 mb-2">
+                        <div class="col-lg-2 col-md-2 mb-2">
                             @php
                                 $datapassing = [
                                 'user' => $data['user'],
@@ -50,42 +88,28 @@
                             <a href="{{ $module['url'] }}" class="card-link" onclick="openWithSessionDev(event,'{{ $module['local_url'] }}', '{{ $module['url'] }}', '{{ $datapassingJson }}')">
                             @endif
 
-                                <div class="card" style="border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; background-color: rgba(255, 255, 255, 0.5);">
-                                    <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 30px; background-color: rgba(255, 255, 255, 0.5);">
+                                <div class="card" style="border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; background-color: rgba(255, 255, 255, 0.149);">
+                                    <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 30px; background-color: rgba(255, 255, 255, 0.173); display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                         <div class="row align-items-center">
-                                            <div class="col-4 col-md-4 text-center text-md-left">
-                                                {{-- <img src="{{ $module['image_module'] }}" style="width: 70px; height: 70px; object-fit: cover; margin-right: 25px; border-radius: 50%;"> --}}
-                                                <div 
-                                                style="width: 70px; height: 70px; overflow: hidden; border-radius: 50%; margin-right: 25px;">
-                                                <img 
-                                                    src="{{ $module['image_module'] }}" 
-                                                    style="width: 100%; height: 100%; object-fit: cover;">
+                                            <div class="col-12 col-md-12 text-center">
+                                               
+                                                <div style="width: 70px; height: 70px; overflow: hidden; border-radius: 50%; margin-right: 25px;">
+                                                <img src="{{ $module['image_module'] }}" style="width: 100%; height: 100%; object-fit: cover;">
                                                 </div>
-                                            </div>
-                                            <div class="col-8 col-md-8">
-                                                <div class="d-flex flex-column justify-content-center h-100 text-center text-md-left">
-                                                    <span style="color: #15c18e; font-weight: 700; font-size: 16px;">{{ $module['module'] }}</span>
-                                                    <div style="margin-top: 10px; color: #9e9fc7; font-weight: 700; font-size: 12px;">
-                                                        {{ $module['role'] }}
-                                                        
-                                                    </div>
-                                                 
+                                                <span style="color: #009568; font-weight: 700; font-size: 14px;">{{ $module['module'] }}</span>
+                                              
 
-                                                </div>
                                             </div>
+                                          
                                         </div>
                                     </div>
                                 </div>
                             </a>
 
-
-
-
-
                         </div>
                         
                         @endif
-                    @endforeach
+                    @endforeach --}}
                     
 
                     </div>

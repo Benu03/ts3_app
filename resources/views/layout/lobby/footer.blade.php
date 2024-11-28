@@ -27,10 +27,13 @@
             type: 'warning',
             showCancelButton: true,
             reverseButtons: false,
-            confirmButtonColor: '#f1c40f', 
+            confirmButtonColor: '#a342f7', 
             cancelButtonColor: '#3498db',  
-            confirmButtonText: 'Local',
+            confirmButtonText: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
             cancelButtonText: 'Development',
+            customClass: {
+                        popup: 'rounded-modal',
+                    }
         }).then((result) => {
       
             const datapassing = JSON.parse(datapassingJson);
@@ -39,13 +42,6 @@
             const module = btoa(JSON.stringify(datapassing.module) + secretKey);
             const key_module = btoa(JSON.stringify(datapassing.module.key_module) + secretKey);
 
-            // if (result.value === true) {
-            //     const newUrl = `${local_url}?key_module=${key_module}&user=${user}&module=${module}`;
-            //     window.location.href = newUrl;
-            // } else {
-            //     const newUrl = `${url}?key_module=${key_module}&user=${user}&module=${module}`;
-            //     window.location.href = newUrl;
-            // }
             if (result.isConfirmed) {
                 const newUrl = `${local_url}?key_module=${key_module}&user=${user}&module=${module}`;
                 window.location.href = newUrl;

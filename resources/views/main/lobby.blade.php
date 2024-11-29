@@ -51,8 +51,8 @@
                onclick="openWithSessionDev(event, '{{ $module['local_url'] }}', '{{ $module['url'] }}', '{{ $datapassingJson }}')">
         @endif
 
-            <div class="card" style="border-radius: 60px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; background-color: rgba(255, 255, 255, 0.149);">
-                <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 60px; background-color: rgba(255, 255, 255, 0.173); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="card" style="border-radius: 45px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; background-color: rgba(255, 255, 255, 0.149);">
+                <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 45px; background-color: rgba(255, 255, 255, 0.173); display: flex; flex-direction: column; justify-content: center; align-items: center;">
                     <div class="row align-items-center">
                         <div class="col-12 d-flex flex-column align-items-center">
                             <div style="width: 70px; height: 70px; overflow: hidden; border-radius: 50%; margin-bottom: 5px; display: flex; justify-content: center; align-items: center;">

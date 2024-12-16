@@ -55,8 +55,9 @@
                 <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 45px; background-color: rgba(255, 255, 255, 0.173); display: flex; flex-direction: column; justify-content: center; align-items: center;">
                     <div class="row align-items-center">
                         <div class="col-12 d-flex flex-column align-items-center">
-                            <div style="width: 70px; height: 70px; overflow: hidden; border-radius: 50%; margin-bottom: 5px; display: flex; justify-content: center; align-items: center;">
-                                <img src="{{ $module['image_module'] }}" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="width: 70px; height: 70px; overflow: hidden;  margin-bottom: 5px; display: flex; justify-content: center; align-items: center;">
+                                <img src="{{ $module['image_module'] }}" 
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); filter: brightness(1)">
                             </div>
                             <span style="color: #009568; font-weight: 700; font-size: 14px; text-align: center;">{{ $module['module'] }}</span>
                         </div>
@@ -69,49 +70,7 @@
 @endforeach
 
 
-                    
-                    {{-- @foreach($modules as $module)
-                      @if(strpos($module['platform'], 'web') !== false)
-                        <div class="col-lg-2 col-md-2 mb-2">
-                            @php
-                                $datapassing = [
-                                'user' => $data['user'],
-                                'module' => $module
-                                ];
-                                $datapassingJson = json_encode($datapassing);
-                            @endphp
-
-                            @if(config('app.env') == 'production')
-                            <a href="{{ $module['url'] }}" class="card-link" onclick="openWithSession(event, '{{ $module['url'] }}', '{{ $datapassingJson }}')">
-                            @endif
-                            @if(config('app.env') == 'development')
-                            <a href="{{ $module['url'] }}" class="card-link" onclick="openWithSessionDev(event,'{{ $module['local_url'] }}', '{{ $module['url'] }}', '{{ $datapassingJson }}')">
-                            @endif
-
-                                <div class="card" style="border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; background-color: rgba(255, 255, 255, 0.149);">
-                                    <div class="card-body" style="color: #2E308A; height: 110px; width: 100%; border-radius: 30px; background-color: rgba(255, 255, 255, 0.173); display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                        <div class="row align-items-center">
-                                            <div class="col-12 col-md-12 text-center">
-                                               
-                                                <div style="width: 70px; height: 70px; overflow: hidden; border-radius: 50%; margin-right: 25px;">
-                                                <img src="{{ $module['image_module'] }}" style="width: 100%; height: 100%; object-fit: cover;">
-                                                </div>
-                                                <span style="color: #009568; font-weight: 700; font-size: 14px;">{{ $module['module'] }}</span>
-                                              
-
-                                            </div>
-                                          
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                        
-                        @endif
-                    @endforeach --}}
-                    
-
+               
                     </div>
                 </div>
             </div>
@@ -124,7 +83,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             var myCarousel = document.getElementById('bannerSlider');
             var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 10000, 
+                interval: 8000, 
                 ride: 'carousel'
             });
         });

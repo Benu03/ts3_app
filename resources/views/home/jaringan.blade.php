@@ -1,90 +1,54 @@
 
+<!--Inner Header Start-->
 <section class="wf100 p80 inner-header" style="background-image: url('{{ asset('assets/upload/image/'.$bg->gambar) }}'); background-position: bottom center;">
    <div class="container">
       <h1>{{ $title }}</h1>
    </div>
 </section>
+<!--Inner Header End--> 
+<!--Contact Start-->
+<section class="contact-page wf100 p50">
+    
+    <div class="container">
+    <div class="custom-card" style ="margin-bottom: 20px;">
+                              
+        <div class="card-body">
+            <div class="row" style="margin-top: 60px;">
+                     <div class="col-lg-12">
+                                 {{-- <h2 class="mb-4 font-weight-bold text-center">Jaringan Kami</h2> --}}
+                              <h5 class="mb-4 font-weight-bold">
+                                 Jaringan layanan service kunjung kami, tersebar di beberapa lokasi di wilayah Indonesia, antara lain:
+                              </h5>
+                           <select id="locationSelect" class="form-control" style="margin-bottom: 20px;">
+                              <option value="">Pilih Kota</option>
+                              <?php foreach ($locations as $provinsi => $cities): ?>
+                                 <optgroup label="<?= $provinsi ?>">
+                                    <?php foreach ($cities as $city): ?>
+                                       <option value="<?= $city['gmap'] ?>" data-address="<?= $city['address'] ?>">
+                                          <?= $city['name'] ?>
+                                       </option>
+                                    <?php endforeach; ?>
+                                 </optgroup>
+                              <?php endforeach; ?>
+                           </select>
 
-<!-- Header End -->
 
-<!-- Map Locator Section -->
-<section class="wf100 about mb-4">
-   <div class="container">
+                           {{-- <div id="map" style="width: 100%; height: 500px; margin-bottom: 20px;"></div> --}}
+                         
+                                <div id="map" style="width: 100%; height: 500px;"></div>
+                          
 
+                        </div>
+                        </div>
 
-      <div class="row">
-         <div class="col-lg-6">
-            <div class="about-text text-aws">               
-               <?php echo $berita->isi ?>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="col-lg-6">
-            <a href="#"><img src="{{ asset('assets/upload/image/'.$berita->gambar) }}" alt="{{ $title }}" class="img img-fluid img-thumbnail"></a>
-         </div>
-         
-      </div>
 
-      @if($berita->sop_layanan != null)
-      <h5 class="mb-4 font-weight-bold">
-         Jaringan layanan service kunjung kami, tersebar di beberapa lokasi di wilayah Indonesia, antara lain:
-     </h5>
-      <select id="locationSelect" class="form-control" style="margin-bottom: 20px;">
-         <option value="">Pilih Kota</option>
-         <?php foreach ($locations as $provinsi => $cities): ?>
-            <optgroup label="<?= $provinsi ?>">
-               <?php foreach ($cities as $city): ?>
-                  <option value="<?= $city['gmap'] ?>" data-address="<?= $city['address'] ?>">
-                     <?= $city['name'] ?>
-                  </option>
-               <?php endforeach; ?>
-            </optgroup>
-         <?php endforeach; ?>
-      </select>
-
-
-      {{-- <div id="mapNetworks" style="width: 100%; height: 500px; margin-bottom: 20px;"></div> --}}
-      <div id="map" style="width: 100%; height: 500px; margin-bottom: 20px;"></div>
-
-      
-
-
-       @endif
-       @if($berita->sop_layanan != null)
-         <div class="row text center">
-            <div class="embed-responsive embed-responsive-4by3"> 
-               <iframe src="{{ asset('berita/sop-layanan/'.$berita->sop_layanan) }}#toolbar=0" type="application/pdf" width="80%"> </iframe>
-            </div>
-         </div>
-      @endif
-
-   </div>
 </section>
 
 
-
-      <section class="donation-join wf100 p80">
-         <div class="container text-center">
-            <div class="row">
-               <?php foreach($layanan as $layanan) { ?>
-                  <div class="col-md-4 col-sm-6">
-                     <br><a href="{{ asset('berita/layanan/'.$layanan->slug_berita) }}">
-                     <img src="{{ asset('assets/upload/image/thumbs/'.$layanan->gambar) }}" alt="{{ $layanan->judul_berita }}" class="img img-thumbnail img-fluid"></a>
-                     <div class="volbox">
-                        <h6>{{ $layanan->judul_berita }}</h6>
-                        <p>{{ $layanan->keywords }}</p>
-                        <a href="{{ asset('berita/layanan/'.$layanan->slug_berita) }}">Lihat detail</a> 
-                     </div>
-                  </div>
-                  <!--box  end--> 
-               <?php } ?>
-            </div>
-         </div>
-      </div>
-      <br><br>
-      </section>
-      <div class="clearfix"><br><br></div>
-
-      <script>
+<script>
          let map, markers = [];
          const locations2 = @json($locations2);
        
@@ -205,3 +169,4 @@
          window.onload = initMap;
       </script>
       
+

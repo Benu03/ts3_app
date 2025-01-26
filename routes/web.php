@@ -21,6 +21,10 @@ Route::get('berhasil/{par1}', [Home::class, 'berhasil']);
 Route::get('cetak/{par1}', [Home::class, 'cetak']);
 Route::get('ts3', [Home::class, 'ts3']);
 
+
+Route::get('jaringan', [Home::class, 'jaringan']);
+Route::get('academy', [Home::class, 'academy']);
+
 // Login
 Route::get('login', [Login::class, 'index'])->name('login');
 Route::post('login/check', [Login::class, 'check']);

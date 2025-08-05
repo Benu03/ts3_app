@@ -12,7 +12,7 @@
             <div class="content" style="padding:80px 150px 0 150px;">
                 
                 
-                <div id="bannerSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000" style="margin-bottom: 20px;">
+                {{-- <div id="bannerSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000" style="margin-bottom: 20px;">
                     <div class="carousel-inner">
                         @foreach($data['banners'] as $index => $banner)
                             <div class="carousel-item @if($index == 0) active @endif">
@@ -22,7 +22,7 @@
                     </div>
                     
                   
-                </div>
+                </div> --}}
 
                 <div class="row">
               
@@ -79,7 +79,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Inisialisasi Carousel Secara Manual -->
-    <script>
+    {{-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             var myCarousel = document.getElementById('bannerSlider');
             var carousel = new bootstrap.Carousel(myCarousel, {
@@ -87,7 +87,7 @@
                 ride: 'carousel'
             });
         });
-    </script>
+    </script> --}}
 
 @endsection
 

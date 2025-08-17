@@ -97,73 +97,7 @@
     console.log(page_title,page_url);
 
     viewPage(page_url,page_title);
-    function chooseMenu(elem,page_url,page_title){
-        $('.menu-item a, .menu-item-has-children a, .menu-item-has-children-li a').removeClass('active');
-        if(elem){
-            elem.parents(2).children('a').addClass('active');
-            elem.addClass('active');
-        }
-        viewPage(page_url,page_title);
-    }
 
-    function viewPage(page_url = '',page_title = '') {
-        $.blockUI();
-        post_url = "{{ url()->to('/') }}" + '/' + page_url;
-        $.ajax({
-            type: 'POST',
-            url: post_url,
-            data: {
-                page_url: page_url,
-                page_title: page_title
-            },
-            success: function(values) {
-                view = values.view;
-                data = values.data;
-                page_title = data.data.page_title;
-                page_url = data.data.page_url ?? '';
-                state = { additionalInformation: 'Updated the URL with JS' };
-                page_url = post_url;
-                document.title = page_title + ' | SYSTEM INTERNAL AUDIT';
-                window.history.replaceState(state, page_title, page_url);
-                $('#viewPage').html(view);
-                $.unblockUI();
-            }
-        });
-    }
-
-    function close_modal(elem){
-        $(".modal-backdrop").remove();
-        elem.closest('.modal').modal('hide');
-    }
-
-    // LOGO TRANSITION //
-    $("#fullscreen").on('click', function() {
-        const element = document.getElementsByClassName('main-sidebar');
-        if($("body").hasClass("sidebar-collapse")){
-            $("#brandText").text("AUDIT SYSTEM");
-        }
-        else if(!$("body").hasClass("sidebar-collapse")){
-            $("#brandText").text("AS");
-        }
-    });
-    $(".sidebar").on('mouseover', function() {
-        $("body").addClass("hover");
-        logoOnHover();
-    }).on('mouseout', function() {
-        $("body").removeClass("hover");
-        logoOnHover();
-    });
-    function logoOnHover()
-    {
-        const element = document.getElementsByClassName('main-sidebar');
-        if($("body").hasClass("hover")){
-            $("#brandText").text("AS");
-        }
-        else if($("body").hasClass("sidebar-collapse") && !$("body").hasClass("hover")){
-            $("#brandText").text("AUDIT SYSTEM");
-        }
-    }
-    // LOGO TRANSITION //
 
     // $('body').on('collapsed.lte.sidebar', function () {
     //     // Saat sidebar collapse, ubah teks brand menjadi "SIA"

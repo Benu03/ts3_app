@@ -400,7 +400,7 @@
       }
 
 
-      setInterval(changeBackground, 15000);
+      setInterval(changeBackground, 120000);
 
       // Set background pertama kali
       changeBackground();

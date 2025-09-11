@@ -19,11 +19,14 @@ class Login extends Controller
     // Main page
     public function index()
     {
-    
-    	$site = DB::connection('ts3')->table('cp.konfigurasi')->first();
-        $data = array(  'title'     => 'Login',
-    					'site'		=> $site);
-        return view('login/index',$data);
+  
+         return redirect(config('static.url_login_mudahin'));
+
+
+    	// $site = DB::connection('ts3')->table('cp.konfigurasi')->first();
+        // $data = array(  'title'     => 'Login',
+    	// 				'site'		=> $site);
+        // return view('login/index',$data);
     }
 
     // Cek

@@ -9,4 +9,5 @@ return [
   'app_env' => env('APP_ENV'),
   'url_access' => env('URL_ACCESS'),
   'key_static' => env('KEY_STATIC','false'),
+  'url_login_mudahin' => env('URL_LOGIN_MUDAHIN'),
 ];
